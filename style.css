@@ -3505,20 +3505,20 @@ html, body {
 
   /* Projets Page */
   .projects-wilmotte-container {
-    padding: 3rem 1.2rem 6rem;
+    padding: 2.2rem 1.2rem 5rem;
   }
 
   .projects-main-title {
-    font-size: clamp(2rem, 6vw, 3rem);
+    font-size: clamp(1.85rem, 5.5vw, 2.6rem);
   }
 
   .projects-editorial-manifesto {
-    font-size: 1rem;
-    line-height: 1.7;
+    font-size: 0.98rem;
+    line-height: 1.75;
   }
 
   .projects-staggered-gallery {
-    gap: 3.5rem;
+    gap: 2.5rem;
   }
 
   /* Recherche Page */
@@ -3803,31 +3803,36 @@ html, body {
   width: 100%;
   max-width: 1600px;
   margin: 0 auto;
-  padding: 4.5rem 3.5rem 8rem;
+  padding: clamp(3rem, 5vw, 4.5rem) clamp(1.2rem, 3.5vw, 3.5rem) 8rem;
   box-sizing: border-box;
   overflow-x: hidden;
 }
 
 .projects-wilmotte-header {
   margin-bottom: 3.5rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .projects-main-title {
   font-family: 'Cinzel', serif;
-  font-size: 3.8rem;
+  font-size: clamp(2rem, 5.5vw, 3.8rem);
   font-weight: 500;
   letter-spacing: 0.05em;
   color: var(--text-color);
   margin-bottom: 1.2rem;
   line-height: 1.15;
+  word-break: normal;
 }
 
 .projects-editorial-manifesto {
-  font-size: 1.15rem;
+  font-size: clamp(1rem, 1.15vw, 1.15rem);
   line-height: 1.85;
   color: var(--text-muted);
   max-width: 980px;
   margin-bottom: 2.8rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* =========================================
@@ -3891,6 +3896,8 @@ html, body {
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
   padding-bottom: 0.8rem;
   gap: 1.5rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .wilmotte-caption-title {
@@ -4024,14 +4031,21 @@ html, body {
 
 /* --- RESPONSIVE BREAKPOINTS (TABLETTES & MOBILES) --- */
 @media (max-width: 1024px) {
-  .projects-editorial-mosaic {
-    gap: 4rem;
+  .projects-wilmotte-container {
+    padding: 3.5rem 2rem 6rem;
+  }
+  .projects-staggered-gallery {
+    gap: 3.5rem;
   }
   .wilmotte-row {
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 2rem;
-    row-gap: 3rem;
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    column-gap: 2rem !important;
+    row-gap: 3rem !important;
+    width: 100% !important;
   }
+  .wilmotte-row .wilmotte-card,
+  .wilmotte-row [class*="pattern-"] .wilmotte-card,
   .wilmotte-row.pattern-asym-left .wilmotte-card:nth-child(n),
   .wilmotte-row.pattern-triad .wilmotte-card:nth-child(n),
   .wilmotte-row.pattern-spaced .wilmotte-card:nth-child(n),
@@ -4040,21 +4054,105 @@ html, body {
   .wilmotte-row.pattern-offset .wilmotte-card:nth-child(n) {
     grid-column: auto !important;
     margin-top: 0 !important;
+    width: 100% !important;
+  }
+  .wilmotte-img-box {
+    aspect-ratio: 16 / 10 !important;
+    width: 100% !important;
   }
 }
 
 @media (max-width: 768px) {
-  .projects-editorial-mosaic {
-    gap: 3.5rem;
+  .projects-wilmotte-container {
+    padding: 2.2rem 1.2rem 5rem !important;
+    width: 100% !important;
+  }
+  .projects-main-title {
+    font-size: clamp(1.85rem, 5.5vw, 2.6rem) !important;
+    line-height: 1.15 !important;
+    margin-bottom: 1rem !important;
+  }
+  .projects-editorial-manifesto {
+    font-size: 0.98rem !important;
+    line-height: 1.75 !important;
+    margin-bottom: 2.2rem !important;
+    width: 100% !important;
+  }
+  .projects-staggered-gallery {
+    gap: 2.5rem !important;
+    width: 100% !important;
   }
   .wilmotte-row {
-    grid-template-columns: 1fr;
-    row-gap: 3rem;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2.5rem !important;
+    width: 100% !important;
+  }
+  .wilmotte-card {
+    display: block !important;
+    width: 100% !important;
+    margin: 0 !important;
+  }
+  .wilmotte-row .wilmotte-card,
+  .wilmotte-row [class*="pattern-"] .wilmotte-card,
+  .wilmotte-row.pattern-asym-left .wilmotte-card:nth-child(n),
+  .wilmotte-row.pattern-triad .wilmotte-card:nth-child(n),
+  .wilmotte-row.pattern-spaced .wilmotte-card:nth-child(n),
+  .wilmotte-row.pattern-asym-right .wilmotte-card:nth-child(n),
+  .wilmotte-row.pattern-triad-alt .wilmotte-card:nth-child(n),
+  .wilmotte-row.pattern-offset .wilmotte-card:nth-child(n) {
+    grid-column: auto !important;
+    margin-top: 0 !important;
+    width: 100% !important;
+  }
+  .wilmotte-img-box {
+    width: 100% !important;
+    aspect-ratio: 16 / 10 !important;
+    border-radius: 3px !important;
+  }
+  .wilmotte-img-box img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
   }
   .wilmotte-caption {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.3rem;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.35rem !important;
+    padding: 0.8rem 0 0.4rem !important;
+    width: 100% !important;
+  }
+  .wilmotte-caption-title {
+    font-size: 1.02rem !important;
+    line-height: 1.35 !important;
+    letter-spacing: 0.05em !important;
+    white-space: normal !important;
+    word-break: normal !important;
+    width: 100% !important;
+  }
+  .wilmotte-caption-loc {
+    font-size: 0.8rem !important;
+    letter-spacing: 0.08em !important;
+    white-space: normal !important;
+    word-break: normal !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .projects-wilmotte-container {
+    padding: 1.8rem 1rem 4rem !important;
+  }
+  .projects-main-title {
+    font-size: 1.8rem !important;
+  }
+  .projects-editorial-manifesto {
+    font-size: 0.92rem !important;
+    line-height: 1.7 !important;
+  }
+  .wilmotte-img-box {
+    aspect-ratio: 16 / 10 !important;
   }
 }
 
