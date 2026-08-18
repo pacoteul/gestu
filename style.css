@@ -884,7 +884,8 @@ html, body {
 
 .deep-dive-specs {
   display: flex;
-  gap: 3.5rem;
+  flex-wrap: wrap;
+  gap: clamp(1.5rem, 2.5vw, 3.5rem);
 }
 
 .spec-item {
@@ -3417,10 +3418,15 @@ html, body {
   }
 
   .deep-dive-specs {
+    display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1.2rem;
+    gap: 1.4rem 1rem;
     text-align: left;
     width: 100%;
+  }
+
+  .deep-dive-specs .spec-item:nth-child(3) {
+    grid-column: 1 / -1;
   }
 
   .spec-item {
@@ -3737,7 +3743,19 @@ html, body {
   }
 
   .deep-dive-specs {
-    grid-template-columns: 1fr;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem 0.8rem;
+    width: 100%;
+  }
+
+  .deep-dive-specs .spec-item:nth-child(3) {
+    grid-column: 1 / -1;
+  }
+
+  .spec-value {
+    font-size: 0.95rem;
+    line-height: 1.5;
   }
 
   .deep-img-large, 
