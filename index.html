@@ -1,0 +1,1559 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="alternate icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" href="/images/logo.png" />
+  <meta name="theme-color" content="#080808" />
+  <meta name="description" content="GËSTÜ - Agence internationale d'architecture, de design et de recherche." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GËSTÜ - Architecture</title>
+  <link rel="stylesheet" href="./style.css?v=117">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  
+  <!-- LE LOADER : FUSION & DISSOLUTION -->
+  <div id="loader" class="loader-fusion">
+    <div class="loader-bg-glow"></div>
+    <canvas id="dissolution-canvas"></canvas>
+    
+    <div class="loader-monogram-container">
+      <svg id="loader-svg" viewBox="0 0 300 450" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+        <defs>
+          <!-- Dégradé métallique bronze / or brossé chaud haute définition -->
+          <linearGradient id="bronzeGrad" x1="15%" y1="0%" x2="85%" y2="100%">
+            <stop offset="0%" stop-color="#8a5323"/>
+            <stop offset="20%" stop-color="#c99557"/>
+            <stop offset="45%" stop-color="#f5dcab"/>
+            <stop offset="70%" stop-color="#be8746"/>
+            <stop offset="100%" stop-color="#6e3f16"/>
+          </linearGradient>
+
+          <linearGradient id="highlightGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#fff2d6" stop-opacity="0.9"/>
+            <stop offset="50%" stop-color="#e0a965" stop-opacity="0.5"/>
+            <stop offset="100%" stop-color="#8a5323" stop-opacity="0.2"/>
+          </linearGradient>
+
+          <!-- Filtre ombre portée 3D et lueur chaude -->
+          <filter id="goldGlow" x="-30%" y="-30%" width="160%" height="160%">
+            <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#4a280e" flood-opacity="0.32"/>
+            <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#ffd599" flood-opacity="0.45"/>
+          </filter>
+        </defs>
+
+        <g id="monogram-group" filter="url(#goldGlow)">
+          <!-- 1. CAPSULE CENTRALE HAUTE (Élément initial) -->
+          <path class="logo-piece piece-center-top" 
+                fill="url(#bronzeGrad)" 
+                fill-rule="evenodd"
+                d="M 130,65 C 130,54 139,45 150,45 C 161,45 170,54 170,65 L 170,235 C 170,246 161,255 150,255 C 139,255 130,246 130,235 Z M 140,66 C 140,61 144,57 150,57 C 156,57 160,61 160,66 L 160,234 C 160,239 156,243 150,243 C 144,243 140,239 140,234 Z" />
+
+          <!-- 2. U CENTRAL BAS -->
+          <path class="logo-piece piece-center-bottom" 
+                fill="url(#bronzeGrad)" 
+                fill-rule="evenodd"
+                d="M 130,285 L 140,285 L 140,383 C 140,388 144,393 150,393 C 156,393 160,388 160,383 L 160,285 L 170,285 L 170,385 C 170,396 161,405 150,405 C 139,405 130,396 130,385 Z" />
+
+          <!-- 3. COLONNE GAUCHE -->
+          <!-- 3.1 Arc supérieur gauche -->
+          <path class="logo-piece piece-left-top-arc" 
+                fill="url(#bronzeGrad)" 
+                d="M 114,45 C 99,45 92,54 92,72 L 92,90 L 102,90 L 102,72 C 102,61 106,55 114,55 Z" />
+          
+          <!-- 3.2 Rectangle supérieur gauche -->
+          <rect class="logo-piece piece-left-1" 
+                x="92" y="105" width="22" height="65" rx="3" 
+                fill="url(#bronzeGrad)" />
+
+          <!-- 3.3 Rectangle médian gauche -->
+          <rect class="logo-piece piece-left-2" 
+                x="92" y="185" width="22" height="70" rx="3" 
+                fill="url(#bronzeGrad)" />
+
+          <!-- 3.4 Rectangle inférieur gauche -->
+          <rect class="logo-piece piece-left-3" 
+                x="92" y="285" width="22" height="45" rx="3" 
+                fill="url(#bronzeGrad)" />
+
+          <!-- 3.5 Arc inférieur gauche -->
+          <path class="logo-piece piece-left-bottom-arc" 
+                fill="url(#bronzeGrad)" 
+                d="M 92,345 L 92,378 C 92,396 99,405 114,405 L 114,395 C 106,395 102,389 102,378 L 102,345 Z" />
+
+          <!-- 4. COLONNE DROITE -->
+          <!-- 4.1 Arc supérieur droit -->
+          <path class="logo-piece piece-right-top-arc" 
+                fill="url(#bronzeGrad)" 
+                d="M 186,45 C 201,45 208,54 208,72 L 208,90 L 198,90 L 198,72 C 198,61 194,55 186,55 Z" />
+
+          <!-- 4.2 Rectangle supérieur droit -->
+          <rect class="logo-piece piece-right-1" 
+                x="186" y="105" width="22" height="65" rx="3" 
+                fill="url(#bronzeGrad)" />
+
+          <!-- 4.3 Rectangle long inférieur droit -->
+          <rect class="logo-piece piece-right-2" 
+                x="186" y="185" width="22" height="145" rx="3" 
+                fill="url(#bronzeGrad)" />
+
+          <!-- 4.4 Arc inférieur droit -->
+          <path class="logo-piece piece-right-bottom-arc" 
+                fill="url(#bronzeGrad)" 
+                d="M 208,345 L 208,378 C 208,396 201,405 186,405 L 186,395 C 194,395 198,389 198,378 L 198,345 Z" />
+
+          <!-- 5. AILES / ANSES LATÉRALES -->
+          <!-- 5.1 Aile gauche -->
+          <path class="logo-piece piece-wing-left" 
+                fill="url(#bronzeGrad)" 
+                fill-rule="evenodd"
+                d="M 80,135 C 60,135 56,150 56,180 L 56,250 C 56,280 60,295 80,295 L 80,285 C 67,285 66,274 66,250 L 66,180 C 66,156 67,145 80,145 Z" />
+
+          <!-- 5.2 Aile droite -->
+          <path class="logo-piece piece-wing-right" 
+                fill="url(#bronzeGrad)" 
+                fill-rule="evenodd"
+                d="M 220,135 C 240,135 244,150 244,180 L 244,250 C 244,280 240,295 220,295 L 220,285 C 233,285 234,274 234,250 L 234,180 C 234,156 233,145 220,145 Z" />
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <!-- LE SITE PRINCIPAL (Apparaît après le loader) -->
+  <div id="main-content">
+    
+    <!-- HEADER GLOBAL -->
+    <header class="global-header">
+      <div class="header-left">
+        <a href="#" class="logo-wrapper">
+          <img src="/images/logo.png" alt="GËSTÜ Logo Mark" class="logo-img">
+          <div class="logo-text-block">
+            <span class="logo-title">GËSTÜ</span>
+            <span class="logo-line"></span>
+            <span class="logo-subtitle">architecture studio</span>
+          </div>
+        </a>
+      </div>
+      <div class="header-right">
+        <div class="lang-switch">
+          <span class="active">FR</span> <span class="dim">EN</span>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Basculer le thème">
+          <!-- SVG Moon icon (default) -->
+          <svg id="theme-icon" xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+        <button class="menu-btn" id="menu-toggle" aria-label="Menu principal">
+          <div class="burger-line"></div>
+          <div class="burger-line"></div>
+        </button>
+      </div>
+    </header>
+
+    <!-- OVERLAY MENU (Plein écran) -->
+    <div id="menu-overlay" class="menu-overlay">
+      <div class="menu-content">
+        <nav class="overlay-nav">
+          <a href="#projets" class="overlay-link" data-i18n="nav.projets">PROJETS</a>
+          <a href="#actualites" class="overlay-link" data-i18n="nav.actualites">ACTUALITÉS</a>
+          <a href="#recherche" class="overlay-link" data-i18n="nav.recherche">RECHERCHE</a>
+          <a href="#agence" class="overlay-link" data-i18n="nav.agence">AGENCE</a>
+          <a href="#contact" class="overlay-link" data-i18n="nav.contact">CONTACT</a>
+        </nav>
+        <div class="overlay-footer">
+          <div class="contact-info">contact@gestu-architecture.com</div>
+          <div class="social-links">
+            <span>IG</span><span>LI</span><span>BE</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTENU DYNAMIQUE DES PAGES -->
+    <main id="app-view">
+      <!-- LA VUE ACCUEIL (HOME - STYLE WILMOTTE & ASSOCIÉS) -->
+      <section id="view-home" class="page-view active">
+        
+        <!-- 1. HERO CAROUSEL PLEIN ÉCRAN DYNAMIQUE -->
+        <div class="home-hero-carousel" id="home-hero-carousel">
+          <div class="carousel-track" id="carousel-track">
+            
+            <!-- Slide 0: Maison Azuria -->
+            <!-- Slide 0: Salle des Fêtes Guiberoua -->
+            <div class="carousel-slide active" data-index="0" data-project-id="salle-des-fetes-guiberoua">
+              <div class="slide-bg" style="background-image: url('/images/projects/salle-des-fetes-guiberoua-facade.png');"></div>
+              <div class="slide-overlay"></div>
+              <div class="slide-info-bar">
+                <div class="slide-info-left">
+                  <span class="slide-project-meta">2025 - 2026 • CÔTE D'IVOIRE</span>
+                  <a href="#projet-salle-des-fetes-guiberoua" class="slide-project-title">SALLE DES FÊTES AVEC GUINGUETTE ET ESPACES ADMINISTRATIFS</a>
+                  <a href="#projet-salle-des-fetes-guiberoua" class="slide-discover-btn">DÉCOUVRIR LE PROJET →</a>
+                </div>
+                <div class="slide-info-center">
+                  <span class="slide-project-loc">Côte d'Ivoire</span>
+                </div>
+                <div class="slide-info-right">
+                  <span class="slide-project-cat">Équipement Culturel & Guinguette</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 1: École primaire Kaira Looro -->
+            <div class="carousel-slide" data-index="1" data-project-id="ecole-primaire-kaira-looro">
+              <div class="slide-bg" style="background-image: url('/images/projects/ecole-kaira-looro-exterieur.png');"></div>
+              <div class="slide-overlay"></div>
+              <div class="slide-info-bar">
+                <div class="slide-info-left">
+                  <span class="slide-project-meta">2024 - 2025 • CASAMANCE • SÉNÉGAL</span>
+                  <a href="#projet-ecole-primaire-kaira-looro" class="slide-project-title">ÉCOLE PRIMAIRE KAIRA LOORO</a>
+                  <a href="#projet-ecole-primaire-kaira-looro" class="slide-discover-btn">DÉCOUVRIR LE PROJET →</a>
+                </div>
+                <div class="slide-info-center">
+                  <span class="slide-project-loc">Casamance, Sénégal</span>
+                </div>
+                <div class="slide-info-right">
+                  <span class="slide-project-cat">Concours, Équipement & Terre Crue</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 2: Immeuble de Logements et Services -->
+            <div class="carousel-slide" data-index="2" data-project-id="immeuble-logements-services">
+              <div class="slide-bg" style="background-image: url('/images/projects/immeuble-logements-services-facade.png');"></div>
+              <div class="slide-overlay"></div>
+              <div class="slide-info-bar">
+                <div class="slide-info-left">
+                  <span class="slide-project-meta">2025 - 2026 • DAKAR • SÉNÉGAL</span>
+                  <a href="#projet-immeuble-logements-services" class="slide-project-title">IMMEUBLE DE LOGEMENTS ET SERVICES</a>
+                  <a href="#projet-immeuble-logements-services" class="slide-discover-btn">DÉCOUVRIR LE PROJET →</a>
+                </div>
+                <div class="slide-info-center">
+                  <span class="slide-project-loc">Dakar, Sénégal</span>
+                </div>
+                <div class="slide-info-right">
+                  <span class="slide-project-cat">Logement, Services & Façade Végétalisée</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 3: Keur Cheikh Sadieye -->
+            <div class="carousel-slide" data-index="3" data-project-id="keur-cheikh-sadieye">
+              <div class="slide-bg" style="background-image: url('/images/projects/keur-cheikh-sadieye-jour.png');"></div>
+              <div class="slide-overlay"></div>
+              <div class="slide-info-bar">
+                <div class="slide-info-left">
+                  <span class="slide-project-meta">2026 • TOUBA • SÉNÉGAL</span>
+                  <a href="#projet-keur-cheikh-sadieye" class="slide-project-title">ENSEMBLE RÉSIDENTIEL ET CULTUEL / KEUR CHEIKH SADIEYE</a>
+                  <a href="#projet-keur-cheikh-sadieye" class="slide-discover-btn">DÉCOUVRIR LE PROJET →</a>
+                </div>
+                <div class="slide-info-center">
+                  <span class="slide-project-loc">Touba, Sénégal</span>
+                </div>
+                <div class="slide-info-right">
+                  <span class="slide-project-cat">Ensemble Résidentiel & Cultuel</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 4: Pôle Urbain d'Accueil et de Culture -->
+            <div class="carousel-slide" data-index="4" data-project-id="pole-urbain-accueil-culture">
+              <div class="slide-bg" style="background-image: url('/images/projects/pole-urbain-toulouse.png');"></div>
+              <div class="slide-overlay"></div>
+              <div class="slide-info-bar">
+                <div class="slide-info-left">
+                  <span class="slide-project-meta">2024 • TOULOUSE • FRANCE</span>
+                  <a href="#projet-pole-urbain-accueil-culture" class="slide-project-title">PÔLE URBAIN D'ACCUEIL ET DE CULTURE</a>
+                  <a href="#projet-pole-urbain-accueil-culture" class="slide-discover-btn">DÉCOUVRIR LE PROJET →</a>
+                </div>
+                <div class="slide-info-center">
+                  <span class="slide-project-loc">Toulouse, France</span>
+                </div>
+                <div class="slide-info-right">
+                  <span class="slide-project-cat">Pôle d'Hébergement & Équipements Culturels</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 5: Au Fil de l'Eau -->
+            <div class="carousel-slide" data-index="5" data-project-id="au-fil-de-l-eau">
+              <div class="slide-bg" style="background-image: url('/images/projects/rendu cour 16h.png');"></div>
+              <div class="slide-overlay"></div>
+              <div class="slide-info-bar">
+                <div class="slide-info-left">
+                  <span class="slide-project-meta">2025 • SALY • SÉNÉGAL</span>
+                  <a href="#projet-au-fil-de-l-eau" class="slide-project-title">AU FIL DE L'EAU</a>
+                  <a href="#projet-au-fil-de-l-eau" class="slide-discover-btn">DÉCOUVRIR LE PROJET →</a>
+                </div>
+                <div class="slide-info-center">
+                  <span class="slide-project-loc">Saly, Sénégal</span>
+                </div>
+                <div class="slide-info-right">
+                  <span class="slide-project-cat">Maison d'Hôtes & Bassin Central</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Carousel Controls -->
+          <div class="carousel-nav-controls">
+            <button class="carousel-arrow prev" id="carousel-prev" aria-label="Projet précédent">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            <div class="carousel-indicators" id="carousel-indicators">
+              <span class="indicator active" data-index="0"></span>
+              <span class="indicator" data-index="1"></span>
+              <span class="indicator" data-index="2"></span>
+              <span class="indicator" data-index="3"></span>
+              <span class="indicator" data-index="4"></span>
+              <span class="indicator" data-index="5"></span>
+            </div>
+            <button class="carousel-arrow next" id="carousel-next" aria-label="Projet suivant">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+          </div>
+
+          <!-- Scroll indicator à la Wilmotte -->
+          <div class="home-scroll-indicator" id="home-scroll-indicator">
+            <span class="scroll-text" data-i18n="home.scroll">scroller pour découvrir</span>
+            <div class="scroll-line"></div>
+          </div>
+        </div>
+
+        <!-- 2. SECTION MANIFESTE / CHAPÔ ÉDITORIAL -->
+        <section class="home-section home-manifesto-section reveal">
+          <div class="manifesto-container">
+            <p class="manifesto-text" data-i18n="home.manifesto">
+              <strong>GËSTÜ</strong> est une agence internationale d’architecture, de recherche et de design fondée sur la trilogie : <em>Chercher · Comprendre · Concevoir</em>. Nos projets sont le fruit d'une démarche contextuelle, bioclimatique et sensible, croisant les savoir-faire traditionnels avec les technologies contemporaines pour répondre aux enjeux de l’architecture de demain.
+            </p>
+          </div>
+        </section>
+
+        <!-- 3. SECTION SÉQUENCE PROJET EN DÉTAIL (MAISON AZURIA) -->
+        <section class="home-section home-featured-deep-dive reveal">
+          <div class="featured-deep-container">
+            <div class="deep-dive-header">
+              <div class="deep-dive-titles">
+                <span class="deep-dive-meta" data-i18n="home.azuria.meta">2025 - 2026 • DAKAR • SÉNÉGAL</span>
+                <h2 class="deep-dive-name" data-i18n="home.azuria.title">MAISON AZURIA</h2>
+              </div>
+              <div class="deep-dive-specs">
+                <div class="spec-item">
+                  <span class="spec-label" data-i18n="projects.detail.surface">Surface:</span>
+                  <span class="spec-value">350 m²</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label" data-i18n="projects.detail.status">Statut:</span>
+                  <span class="spec-value" data-i18n="home.azuria.status">Études de conception</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label" data-i18n="projects.detail.mission">Mission:</span>
+                  <span class="spec-value" data-i18n="home.azuria.mission">Conception · Intérieur · Paysage · 3D</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="deep-dive-content">
+              <div class="deep-dive-text">
+                <p data-i18n="home.azuria.p1">
+                  La Maison Azuria propose une architecture contemporaine haut de gamme, pensée autour de la lumière, du confort et d'une relation étroite entre les espaces intérieurs et le jardin.
+                </p>
+                <p data-i18n="home.azuria.p2">
+                  Les façades associent des lignes épurées, de grandes baies vitrées et des claustras en bois noble, créant une architecture à la fois sobre, chaleureuse et intimement liée au climat de Dakar.
+                </p>
+                <a href="#projet-azuria" class="btn-wilmotte" data-i18n="home.azuria.btn">Consulter la fiche détaillée</a>
+              </div>
+              <div class="deep-dive-media">
+                <a href="#projet-azuria" class="deep-img-large">
+                  <img src="/images/projects/azuria-facade.png" alt="Maison Azuria Façade" loading="lazy">
+                  <span class="deep-caption" data-i18n="home.azuria.cap1">Façade Principale & Entrée Paysagée</span>
+                </a>
+                <a href="#projet-azuria" class="deep-img-portrait">
+                  <img src="/images/projects/azuria-terrasse-piscine.png" alt="Maison Azuria Piscine" loading="lazy">
+                  <span class="deep-caption" data-i18n="home.azuria.cap2">Terrasse & Piscine Crépuscule</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 4. SECTION GRILLE ASYMÉTRIQUE ÉDITORIALE -->
+        <section class="home-section home-editorial-section reveal">
+          <div class="editorial-container">
+            
+            <div class="editorial-header">
+              <h2 class="editorial-main-title" data-i18n="home.editorial_title">
+                <span>ÊTRE LÀ OÙ ON</span><br>
+                <span>NE NOUS ATTEND PAS</span>
+              </h2>
+            </div>
+
+            <!-- Grille Asymétrique -->
+            <div class="editorial-grid">
+              
+              <!-- Col Gauche : Grand format carré -->
+              <div class="editorial-col-large">
+                <a href="#projet-azuria" class="editorial-card card-square">
+                  <div class="card-img-wrapper">
+                    <img src="/images/projects/azuria-jardin-sejour.png" alt="Maison Azuria Séjour & Jardin" loading="lazy">
+                  </div>
+                  <div class="card-caption">
+                    <span class="card-title" data-i18n="home.edit.card1.title">MAISON AZURIA — JARDIN & SÉJOUR</span>
+                    <span class="card-loc" data-i18n="home.edit.card1.loc">DAKAR, SÉNÉGAL</span>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Col Droite : Paysage + (Portrait & Texte côte à côte) -->
+              <div class="editorial-col-right">
+                
+                <!-- Format Paysage Haut -->
+                <a href="#projet-au-fil-de-l-eau" class="editorial-card card-landscape">
+                  <div class="card-img-wrapper">
+                    <img src="/images/projects/rendu cour 16h.png" alt="Au Fil de l'Eau Cour" loading="lazy">
+                  </div>
+                  <div class="card-caption">
+                    <span class="card-title" data-i18n="home.edit.card2.title">AU FIL DE L'EAU — BASSIN CONTEMPLATIF</span>
+                    <span class="card-loc" data-i18n="home.edit.card2.loc">SALY, SÉNÉGAL</span>
+                  </div>
+                </a>
+
+                <!-- Rangée Basse : Portrait + Texte éditorial -->
+                <div class="editorial-bottom-split">
+                  
+                  <div class="split-portrait">
+                    <a href="#projet-azuria" class="editorial-card card-portrait">
+                      <div class="card-img-wrapper">
+                        <img src="/images/projects/azuria-interieur.png" alt="Maison Azuria Intérieur" loading="lazy">
+                      </div>
+                      <div class="card-caption">
+                        <span class="card-title" data-i18n="home.edit.card3.title">AZURIA — SALON & MATIÈRES</span>
+                        <span class="card-loc" data-i18n="home.edit.card3.loc">ARCHITECTURE D'INTÉRIEUR</span>
+                      </div>
+                    </a>
+                  </div>
+
+                  <div class="split-text-block">
+                    <div class="editorial-text">
+                      <p data-i18n="home.edit.p1">
+                        Chez GËSTÜ, chaque projet est pensé comme une réponse singulière et durable au site, aux matières et aux usages. Du plus humble au plus emblématique, notre démarche place l'écoute, le confort thermique naturel et l'artisanat au cœur de la conception.
+                      </p>
+                      <p data-i18n="home.edit.p2">
+                        Véritables explorateurs de la fonctionnalité et de l'esthétique, nous tirons parti de la richesse d'une pensée pluridisciplinaire pour créer des architectures intemporelles.
+                      </p>
+                    </div>
+                    <a href="#projets" class="btn-wilmotte" data-i18n="home.discover_projects">Découvrir nos projets</a>
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+        </section>
+
+        <!-- 5. SECTION « PROJETS PHARE » -->
+        <section class="home-section home-other-projects-section reveal">
+          <div class="other-projects-container">
+            
+            <div class="other-projects-header">
+              <h2 class="other-projects-main-title" data-i18n="home.other_projects">SÉLECTION DE PROJETS</h2>
+              <div class="other-projects-nav">
+                <button class="slider-btn prev" id="other-prev" aria-label="Précédent">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                </button>
+                <button class="slider-btn next" id="other-next" aria-label="Suivant">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- Carrousel horizontal avec défilement des projets -->
+            <div class="other-projects-track-wrapper" id="other-projects-track-wrapper">
+              <div class="other-projects-track" id="other-projects-track">
+                
+                <!-- Carte 1: Salle des Fêtes Guiberoua -->
+                <a href="#projet-salle-des-fetes-guiberoua" class="other-project-card">
+                  <div class="other-card-img" style="background-image: url('/images/projects/salle-des-fetes-guiberoua-facade.png');"></div>
+                  <div class="other-card-info">
+                    <span class="other-card-loc">Côte d'Ivoire • 2025 - 2026</span>
+                    <h3 class="other-card-title">SALLE DES FÊTES AVEC GUINGUETTE ET ESPACES ADMINISTRATIFS</h3>
+                  </div>
+                </a>
+
+                <!-- Carte 2: Restaurant Guiberoua -->
+                <a href="#projet-restaurant-guiberoua" class="other-project-card">
+                  <div class="other-card-img" style="background-image: url('/images/projects/restaurant-guiberoua-salle.png');"></div>
+                  <div class="other-card-info">
+                    <span class="other-card-loc">Guibéroua, Côte d'Ivoire • 2026</span>
+                    <h3 class="other-card-title">RESTAURANT GUIBÉROUA</h3>
+                  </div>
+                </a>
+
+                <!-- Carte 3: Primary School Senegal -->
+                <a href="#projet-primary-school-senegal" class="other-project-card">
+                  <div class="other-card-img" style="background-image: url('/images/projects/primary-school-cour-generale.png');"></div>
+                  <div class="other-card-info">
+                    <span class="other-card-loc">Sénégal • 2025</span>
+                    <h3 class="other-card-title">PRIMARY SCHOOL SENEGAL</h3>
+                  </div>
+                </a>
+
+                <!-- Carte 4: Maison Terra -->
+                <a href="#projet-maison-terra" class="other-project-card">
+                  <div class="other-card-img" style="background-image: url('/images/projects/maison-terra-facade-nuit.png');"></div>
+                  <div class="other-card-info">
+                    <span class="other-card-loc">Dakar, Sénégal • 2023 - 2024</span>
+                    <h3 class="other-card-title">MAISON TERRA</h3>
+                  </div>
+                </a>
+
+                <!-- Carte 4: Maison Réhabilitation avec Magasin -->
+                <a href="#projet-maison-rehabilitation-magasin" class="other-project-card">
+                  <div class="other-card-img" style="background-image: url('/images/projects/maison-rehab-magasin-facade.png');"></div>
+                  <div class="other-card-info">
+                    <span class="other-card-loc">Dakar, Sénégal • 2025</span>
+                    <h3 class="other-card-title">MAISON RÉHABILITATION AVEC MAGASIN</h3>
+                  </div>
+                </a>
+
+                <!-- Carte 4: Maison Obsidienne -->
+                <a href="#projet-maison-obsidienne" class="other-project-card">
+                  <div class="other-card-img" style="background-image: url('/images/projects/maison-obsidienne-facade-nuit.png');"></div>
+                  <div class="other-card-info">
+                    <span class="other-card-loc">Kigali, Rwanda • 2024</span>
+                    <h3 class="other-card-title">MAISON OBSIDIENNE</h3>
+                  </div>
+                </a>
+
+                <!-- Carte 4: Maison Mandy -->
+                <a href="#projet-maison-mandy" class="other-project-card">
+                  <div class="other-card-img" style="background-image: url('/images/projects/maison-mandy-facade.png');"></div>
+                  <div class="other-card-info">
+                    <span class="other-card-loc">Gabon • 2023 - 2024</span>
+                    <h3 class="other-card-title">MAISON MANDY</h3>
+                  </div>
+                </a>
+
+                <!-- Carte 4: Maison 23 -->
+                <a href="#projet-maison-23" class="other-project-card">
+                  <div class="other-card-img" style="background-image: url('/images/projects/maison-23-facade.png');"></div>
+                  <div class="other-card-info">
+                    <span class="other-card-loc">Dakar, Sénégal • 2025 - 2026</span>
+                    <h3 class="other-card-title">MAISON 23</h3>
+                  </div>
+                </a>
+
+                <!-- Carte 4: École primaire Kaira Looro -->
+                <a href="#projet-ecole-primaire-kaira-looro" class="other-project-card">
+                  <div class="other-card-img" style="background-image: url('/images/projects/ecole-kaira-looro-exterieur.png');"></div>
+                  <div class="other-card-info">
+                    <span class="other-card-loc">Casamance, Sénégal • 2024 - 2025</span>
+                    <h3 class="other-card-title">ÉCOLE PRIMAIRE KAIRA LOORO</h3>
+                  </div>
+                </a>
+
+                <!-- Carte 5: Pôle Urbain d'Accueil et de Culture -->
+                <a href="#projet-pole-urbain-accueil-culture" class="other-project-card">
+                  <div class="other-card-img" style="background-image: url('/images/projects/pole-urbain-toulouse.png');"></div>
+                  <div class="other-card-info">
+                    <span class="other-card-loc">Toulouse, France • 2024</span>
+                    <h3 class="other-card-title">PÔLE URBAIN D'ACCUEIL ET DE CULTURE</h3>
+                  </div>
+                </a>
+
+                <!-- Carte 6: Immeuble de Logements et Services -->
+                <a href="#projet-immeuble-logements-services" class="other-project-card">
+                  <div class="other-card-img" style="background-image: url('/images/projects/immeuble-logements-services-facade.png');"></div>
+                  <div class="other-card-info">
+                    <span class="other-card-loc">Dakar, Sénégal • 2025 - 2026</span>
+                    <h3 class="other-card-title">IMMEUBLE DE LOGEMENTS ET SERVICES</h3>
+                  </div>
+                </a>
+
+                <!-- Carte 7: Keur Cheikh Sadieye -->
+                <a href="#projet-keur-cheikh-sadieye" class="other-project-card">
+                  <div class="other-card-img" style="background-image: url('/images/projects/keur-cheikh-sadieye-jour.png');"></div>
+                  <div class="other-card-info">
+                    <span class="other-card-loc">Touba, Sénégal • 2026</span>
+                    <h3 class="other-card-title">ENSEMBLE RÉSIDENTIEL ET CULTUEL / KEUR CHEIKH SADIEYE</h3>
+                  </div>
+                </a>
+
+                <!-- Carte 8: Écolodge de Saint-Louis -->
+                <a href="#projet-ecolodge-saint-louis" class="other-project-card">
+                  <div class="other-card-img" style="background-image: url('/images/projects/ecolodge-stlouis-piscine-restaurant.png');"></div>
+                  <div class="other-card-info">
+                    <span class="other-card-loc">Saint-Louis, Sénégal • 2026</span>
+                    <h3 class="other-card-title">ÉCOLODGE DE SAINT-LOUIS</h3>
+                  </div>
+                </a>
+
+                <!-- Carte 9: Maison Azuria -->
+                <a href="#projet-azuria" class="other-project-card">
+                  <div class="other-card-img" style="background-image: url('/images/projects/azuria-facade.png');"></div>
+                  <div class="other-card-info">
+                    <span class="other-card-loc">Dakar, Sénégal • 2025 - 2026</span>
+                    <h3 class="other-card-title">MAISON AZURIA</h3>
+                  </div>
+                </a>
+
+                <!-- Carte 10: Au Fil de l'Eau -->
+                <a href="#projet-au-fil-de-l-eau" class="other-project-card">
+                  <div class="other-card-img" style="background-image: url('/images/projects/rendu cour 16h.png');"></div>
+                  <div class="other-card-info">
+                    <span class="other-card-loc">Saly, Sénégal • 2025</span>
+                    <h3 class="other-card-title">AU FIL DE L'EAU</h3>
+                  </div>
+                </a>
+
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- 6. SECTION SAVOIR-FAIRE DIVERSIFIÉ -->
+        <section class="home-section home-expertise-section reveal">
+          <div class="expertise-container">
+            
+            <div class="expertise-header">
+              <h2 class="editorial-main-title text-right" data-i18n="home.expertise_title">
+                <span>UN SAVOIR-FAIRE</span><br>
+                <span>DIVERSIFIÉ</span>
+              </h2>
+            </div>
+
+            <div class="expertise-grid">
+              
+              <!-- Carte 1 : Architecture -->
+              <div class="expertise-card">
+                <div class="expertise-img-box">
+                  <img src="/images/hero_yoff_1786064651124.jpg" alt="Architecture GESTU" loading="lazy">
+                </div>
+                <div class="expertise-info">
+                  <h3 class="expertise-title" data-i18n="home.exp.arch.title">ARCHITECTURE</h3>
+                  <p class="expertise-desc" data-i18n="home.exp.arch.desc">Équipements scolaires, culturels, résidences d'exception et projets contextuels.</p>
+                  <a href="#projets" class="expertise-link" data-i18n="home.exp.arch.link">Voir les réalisations →</a>
+                </div>
+              </div>
+
+              <!-- Carte 2 : Architecture d'Intérieur -->
+              <div class="expertise-card">
+                <div class="expertise-img-box">
+                  <img src="/images/projects/rehabilitation-3.jpg" alt="Architecture d'Intérieur" loading="lazy">
+                </div>
+                <div class="expertise-info">
+                  <h3 class="expertise-title" data-i18n="home.exp.int.title">INTÉRIEURS & RÉHABILITATION</h3>
+                  <p class="expertise-desc" data-i18n="home.exp.int.desc">Transformation sensible des espaces, travail de la lumière, patios et matières sur-mesure.</p>
+                  <a href="#projets" class="expertise-link" data-i18n="home.exp.int.link">Explorer les projets →</a>
+                </div>
+              </div>
+
+              <!-- Carte 3 : Recherche & Matières -->
+              <div class="expertise-card">
+                <div class="expertise-img-box">
+                  <img src="/images/maison_terre_1786064698160.jpg" alt="Recherche Matières" loading="lazy">
+                </div>
+                <div class="expertise-info">
+                  <h3 class="expertise-title" data-i18n="home.exp.mat.title">RECHERCHE & MATIÈRES</h3>
+                  <p class="expertise-desc" data-i18n="home.exp.mat.desc">Exploration de la terre crue (BTC), fibres végétales, bois, pierre et ventilation passive.</p>
+                  <a href="#recherche" class="expertise-link" data-i18n="home.exp.mat.link">Découvrir le labo →</a>
+                </div>
+              </div>
+
+              <!-- Carte 4 : Innovation & IA -->
+              <div class="expertise-card">
+                <div class="expertise-img-box">
+                  <img src="/images/recherche/rech-card-4.jpg" alt="Innovation & IA" loading="lazy">
+                </div>
+                <div class="expertise-info">
+                  <h3 class="expertise-title" data-i18n="home.exp.ia.title">INNOVATION & IA</h3>
+                  <p class="expertise-desc" data-i18n="home.exp.ia.desc">Base de données vivante et intelligence artificielle dédiée à l'architecture africaine.</p>
+                  <a href="#actualites" class="expertise-link" data-i18n="home.exp.ia.link">En savoir plus →</a>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </section>
+
+        <!-- 7. SECTION ACTUALITÉS & DISTINCTIONS -->
+        <section class="home-section home-news-section reveal">
+          <div class="news-container">
+            
+            <div class="news-header">
+              <h2 class="editorial-main-title" data-i18n="home.news_title">
+                <span>ACTUALITÉS &</span><br>
+                <span>DISTINCTIONS</span>
+              </h2>
+              <a href="#actualites" class="news-all-link" data-i18n="home.all_news">Toutes les actualités →</a>
+            </div>
+
+            <div class="news-cards-grid">
+              
+              <!-- News 1 -->
+              <div class="news-item-card">
+                <div class="news-item-img" style="background-image: url('/images/actualites/actu-card-1.png');"></div>
+                <div class="news-item-content">
+                  <span class="news-date" data-i18n="home.news1.date">ÉDITION 2026</span>
+                  <h3 data-i18n="home.news1.title">LIVRET GËSTÜ</h3>
+                  <p data-i18n="home.news1.desc">Découvrez notre livret présentant la démarche, les projets et la vision de l'agence.</p>
+                  <a href="#actualites" class="news-read-more" data-i18n="home.news1.link">Lire l'article</a>
+                </div>
+              </div>
+
+              <!-- News 2 -->
+              <div class="news-item-card">
+                <a href="#projet-ecole-primaire-kaira-looro" style="text-decoration: none; color: inherit; display: block;">
+                  <div class="news-item-img" style="background-image: url('/images/projects/loro.PNG');"></div>
+                </a>
+                <div class="news-item-content">
+                  <span class="news-date" data-i18n="home.news2.date">DISTINCTION · 2025</span>
+                  <h3 data-i18n="home.news2.title">KAIRA LOORO 2025</h3>
+                  <p data-i18n="home.news2.desc">Mention Honorable pour notre projet d'école primaire en Casamance, valorisant les matériaux biosourcés.</p>
+                  <a href="#projet-ecole-primaire-kaira-looro" class="news-read-more" data-i18n="home.news2.link">Découvrir le projet</a>
+                </div>
+              </div>
+
+              <!-- News 3 -->
+              <div class="news-item-card">
+                <div class="news-item-img" style="background-image: url('/images/recherche/rech-card-3.jpg');"></div>
+                <div class="news-item-content">
+                  <span class="news-date" data-i18n="home.news3.date">RECHERCHE</span>
+                  <h3 data-i18n="home.news3.title">IA GËSTÜ</h3>
+                  <p data-i18n="home.news3.desc">Développement d'un modèle d'intelligence artificielle appliqué aux typologies et matériaux vernaculaires.</p>
+                  <a href="#actualites" class="news-read-more" data-i18n="home.news3.link">Lire l'article</a>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </section>
+
+        <!-- 8. FOOTER ARCHITECTURAL WILMOTTE -->
+        <footer class="home-footer">
+          <div class="footer-container">
+            
+            <div class="footer-top">
+              <div class="footer-brand">
+                <span class="footer-logo">GËSTÜ</span>
+                <p class="footer-tagline" data-i18n="home.subtagline">Chercher · Comprendre · Concevoir</p>
+                <p class="footer-sub" data-i18n="footer.sub">Agence internationale d'architecture, de design et de recherche</p>
+              </div>
+
+              <div class="footer-nav-col">
+                <h4 data-i18n="footer.nav">NAVIGATION</h4>
+                <ul>
+                  <li><a href="#projets" data-i18n="nav.projets">PROJETS</a></li>
+                  <li><a href="#actualites" data-i18n="nav.actualites">ACTUALITÉS</a></li>
+                  <li><a href="#recherche" data-i18n="nav.recherche">RECHERCHE</a></li>
+                  <li><a href="#agence" data-i18n="nav.agence">AGENCE</a></li>
+                  <li><a href="#contact" data-i18n="nav.contact">CONTACT</a></li>
+                </ul>
+              </div>
+
+              <div class="footer-nav-col">
+                <h4 data-i18n="contact.studios">STUDIOS</h4>
+                <p><strong>Dakar</strong><br>Sénégal</p>
+                <p class="mt-2"><strong>Paris</strong><br>France</p>
+              </div>
+
+              <div class="footer-nav-col">
+                <h4 data-i18n="nav.contact">CONTACT</h4>
+                <p><a href="mailto:contact@gestu-studio.com">contact@gestu-studio.com</a></p>
+                <div class="footer-socials">
+                  <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+                  <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+                  <a href="https://pinterest.com" target="_blank" rel="noopener">Pinterest</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="footer-bottom">
+              <p>&copy; 2026 GËSTÜ Architecture. <span data-i18n="footer.rights">Tous droits réservés.</span></p>
+              <a href="#" class="back-to-top" data-i18n="footer.back_to_top">Haut de page ↑</a>
+            </div>
+
+          </div>
+        </footer>
+
+      </section>
+
+      <!-- LA PAGE PROJETS (STYLE WILMOTTE - PAGES 5 & 6) -->
+      <section id="view-projets-grid" class="page-view">
+        <div class="projects-wilmotte-container">
+          
+          <!-- Header Éditorial Projets -->
+          <div class="projects-wilmotte-header reveal">
+            <h1 class="projects-main-title" data-i18n="projects.title">NOS PROJETS</h1>
+            <p class="projects-editorial-manifesto" data-i18n="projects.manifesto">
+              GËSTÜ est une agence d'architecture et de recherche atypique par l'éclectisme de sa production. La diversité des échelles de projet et des programmes que nous concevons ne cesse de surprendre. Nous établissons un lien sensible entre l'environnement bâti et le milieu naturel afin de créer des expériences architecturales durables.
+            </p>
+          </div>
+
+          <!-- Mosaïque Asymétrique & Décalée des Projets -->
+          <div class="projects-staggered-gallery" id="projects-staggered-gallery">
+            <!-- Injecté dynamiquement par JavaScript avec rythmes décalés -->
+          </div>
+
+        </div>
+
+        <!-- FOOTER ARCHITECTURAL WILMOTTE -->
+        <footer class="home-footer">
+          <div class="footer-container">
+            
+            <div class="footer-top">
+              <div class="footer-brand">
+                <span class="footer-logo">GËSTÜ</span>
+                <p class="footer-tagline" data-i18n="home.subtagline">Chercher · Comprendre · Concevoir</p>
+                <p class="footer-sub" data-i18n="footer.sub">Agence internationale d'architecture, de design et de recherche</p>
+              </div>
+
+              <div class="footer-nav-col">
+                <h4 data-i18n="footer.nav">NAVIGATION</h4>
+                <ul>
+                  <li><a href="#projets" data-i18n="nav.projets">PROJETS</a></li>
+                  <li><a href="#actualites" data-i18n="nav.actualites">ACTUALITÉS</a></li>
+                  <li><a href="#recherche" data-i18n="nav.recherche">RECHERCHE</a></li>
+                  <li><a href="#agence" data-i18n="nav.agence">AGENCE</a></li>
+                  <li><a href="#contact" data-i18n="nav.contact">CONTACT</a></li>
+                </ul>
+              </div>
+
+              <div class="footer-nav-col">
+                <h4 data-i18n="contact.studios">STUDIOS</h4>
+                <p><strong>Dakar</strong><br>Sénégal</p>
+                <p class="mt-2"><strong>Paris</strong><br>France</p>
+              </div>
+
+              <div class="footer-nav-col">
+                <h4 data-i18n="nav.contact">CONTACT</h4>
+                <p><a href="mailto:contact@gestu-studio.com">contact@gestu-studio.com</a></p>
+                <div class="footer-socials">
+                  <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+                  <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+                  <a href="https://pinterest.com" target="_blank" rel="noopener">Pinterest</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="footer-bottom">
+              <p>&copy; 2026 GËSTÜ Architecture. <span data-i18n="footer.rights">Tous droits réservés.</span></p>
+              <a href="#" class="back-to-top" data-i18n="footer.back_to_top">Haut de page ↑</a>
+            </div>
+
+          </div>
+        </footer>
+      </section>
+
+      <!-- RECHERCHE VIEW -->
+      <section id="view-recherche" class="page-view">
+        <canvas id="webgl-recherche" class="recherche-full-canvas"></canvas>
+
+        <div class="recherche-hero">
+          <div class="recherche-hero-overlay"></div>
+          <div class="recherche-hero-content reveal">
+            <span class="recherche-badge" data-i18n="recherche.badge">LABORATOIRE DE RECHERCHE & EXPÉRIMENTATION</span>
+            <h1 data-i18n="recherche.title">RECHERCHE</h1>
+            <h2 data-i18n="recherche.lab_title">Un laboratoire pour faire évoluer l'architecture</h2>
+            <div class="recherche-interactive-hint">
+              <span class="hint-dot"></span>
+              <span data-i18n="recherche.interact_hint">Déplacez la souris pour explorer les tracés de recherche</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="recherche-intro reveal delay-1">
+          <p data-i18n="recherche.p1">La recherche est au cœur de GËSTÜ. Le Studio GËSTÜ réunit tous les corps de métier : architectes, artisans, peintres, poètes, couturiers, designers, chercheurs... pour questionner, expérimenter et imaginer les architectures de demain.</p>
+        </div>
+
+        <div class="recherche-features">
+          <div class="feature-item">
+            <div class="feature-icon" style="background-image: url('images/recherche/icon-1.svg');"></div>
+            <h3 data-i18n="recherche.feature1.title">UN STUDIO OUVERT</h3>
+            <p data-i18n="recherche.feature1.desc">Un espace où se croisent les disciplines pour nourrir la création architecturale.</p>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon" style="background-image: url('images/recherche/icon-2.svg');"></div>
+            <h3 data-i18n="recherche.feature2.title">RECHERCHE & MATIÈRES</h3>
+            <p data-i18n="recherche.feature2.desc">Explorer les matériaux biosourcés, les savoir-faire locaux et les techniques contemporaines.</p>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon" style="background-image: url('images/recherche/icon-3.svg');"></div>
+            <h3 data-i18n="recherche.feature3.title">SÉMINAIRES & ATELIERS</h3>
+            <p data-i18n="recherche.feature3.desc">Des rencontres pour penser le monde de demain et interroger notre manière d'habiter.</p>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon" style="background-image: url('images/recherche/icon-4.svg');"></div>
+            <h3 data-i18n="recherche.feature4.title">TRANSMETTRE & PARTAGER</h3>
+            <p data-i18n="recherche.lab_p1">Partager nos recherches et sensibiliser à l'architecture à travers des ateliers et des échanges ouverts.</p>
+          </div>
+        </div>
+
+        <div class="recherche-long-text">
+          <p data-i18n="recherche.p2">Chez GËSTÜ, la recherche ne se limite pas à l'architecture. Elle commence par la rencontre avec d'autres regards, d'autres disciplines et d'autres manières de créer.</p>
+          <p data-i18n="recherche.p3">Le Studio GËSTÜ est pensé comme un laboratoire ouvert où peuvent se rencontrer architectes, architectes d'intérieur, artistes, peintres, poètes, couturiers, designers, artisans et chercheurs. Chacun apporte son langage, ses outils et sa sensibilité pour questionner autrement l'espace et les manières d'habiter.</p>
+          <p data-i18n="recherche.lab_p2">L'objectif est simple : faire évoluer l'architecture par le croisement des disciplines. Une matière peut devenir un sujet de recherche, un poème peut inspirer un espace, un vêtement peut interroger la relation au corps, une œuvre peut transformer notre perception d'un lieu.</p>
+          <p data-i18n="recherche.lab_p3">Le Studio accueille également des séminaires et ateliers de découverte autour de questions qui dépassent les frontières traditionnelles de l'architecture : à quoi ressemblerait la vie sur Mars ? Comment habiter face à la fin du monde ? Comment vivre avec les plantes ? Quels seront les espaces de demain ?</p>
+          <p data-i18n="recherche.lab_p4">Ces rencontres sont des espaces de réflexion, d'expérimentation et de débat. Elles permettent de prendre du recul sur notre manière de construire aujourd'hui et d'imaginer les architectures possibles de demain.</p>
+          <p data-i18n="recherche.p4">GËSTÜ devient ainsi plus qu'une agence : un espace de recherche où l'architecture se nourrit du monde pour mieux le transformer.</p>
+        </div>
+
+        <div class="recherche-grid">
+          <!-- Card 1 -->
+          <div class="recherche-card">
+            <div class="recherche-img" style="background-image: url('images/recherche/rech-card-1.jpg');"></div>
+            <div class="recherche-card-content">
+              <h3 data-i18n="recherche.card1.title">VIVRE AVEC LES PLANTES</h3>
+              <p data-i18n="recherche.seminar_tag">Séminaire</p>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div class="recherche-card">
+            <div class="recherche-img" style="background-image: url('images/recherche/rech-card-2.jpg');"></div>
+            <div class="recherche-card-content">
+              <h3 data-i18n="recherche.card2.title">VIVRE SUR MARS</h3>
+              <p data-i18n="recherche.seminar_tag">Séminaire</p>
+            </div>
+          </div>
+          <!-- Card 3 -->
+          <div class="recherche-card">
+            <div class="recherche-img" style="background-image: url('images/recherche/rech-card-3.jpg');"></div>
+            <div class="recherche-card-content">
+              <h3 data-i18n="recherche.card3.title">APRÈS LA FIN DU MONDE</h3>
+              <p data-i18n="recherche.seminar_tag">Séminaire</p>
+            </div>
+          </div>
+          <!-- Card 4 -->
+          <div class="recherche-card">
+            <div class="recherche-img" style="background-image: url('images/recherche/rech-card-4.jpg');"></div>
+            <div class="recherche-card-content">
+              <h3 data-i18n="recherche.card4.title">LES ATELIERS GËSTÜ</h3>
+              <p data-i18n="recherche.card4.desc">Découverte de l'architecture</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FOOTER ARCHITECTURAL WILMOTTE -->
+        <footer class="home-footer">
+          <div class="footer-container">
+            
+            <div class="footer-top">
+              <div class="footer-brand">
+                <span class="footer-logo">GËSTÜ</span>
+                <p class="footer-tagline" data-i18n="home.subtagline">Chercher · Comprendre · Concevoir</p>
+                <p class="footer-sub" data-i18n="footer.sub">Agence internationale d'architecture, de design et de recherche</p>
+              </div>
+
+              <div class="footer-nav-col">
+                <h4 data-i18n="footer.nav">NAVIGATION</h4>
+                <ul>
+                  <li><a href="#projets" data-i18n="nav.projets">PROJETS</a></li>
+                  <li><a href="#actualites" data-i18n="nav.actualites">ACTUALITÉS</a></li>
+                  <li><a href="#recherche" data-i18n="nav.recherche">RECHERCHE</a></li>
+                  <li><a href="#agence" data-i18n="nav.agence">AGENCE</a></li>
+                  <li><a href="#contact" data-i18n="nav.contact">CONTACT</a></li>
+                </ul>
+              </div>
+
+              <div class="footer-nav-col">
+                <h4 data-i18n="contact.studios">STUDIOS</h4>
+                <p><strong>Dakar</strong><br>Sénégal</p>
+                <p class="mt-2"><strong>Paris</strong><br>France</p>
+              </div>
+
+              <div class="footer-nav-col">
+                <h4 data-i18n="nav.contact">CONTACT</h4>
+                <p><a href="mailto:contact@gestu-studio.com">contact@gestu-studio.com</a></p>
+                <div class="footer-socials">
+                  <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+                  <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+                  <a href="https://pinterest.com" target="_blank" rel="noopener">Pinterest</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="footer-bottom">
+              <p>&copy; 2026 GËSTÜ Architecture. <span data-i18n="footer.rights">Tous droits réservés.</span></p>
+              <a href="#" class="back-to-top" data-i18n="footer.back_to_top">Haut de page ↑</a>
+            </div>
+
+          </div>
+        </footer>
+      </section>
+
+      <!-- CONTACT VIEW -->
+      <section id="view-contact" class="page-view">
+        <div class="contact-header-title">
+          <h1 data-i18n="contact.title">CONTACT</h1>
+        </div>
+        
+        <div class="contact-masthead">
+          
+          <!-- Column 1: Team -->
+          <div class="masthead-col">
+            <h3 data-i18n="contact.team">Équipe</h3>
+            <div class="contact-block">
+              <p><strong data-i18n="contact.fadel.name">Fadel Mbaye</strong><br>
+              <span data-i18n="contact.fadel.role">Architecte — Fondateur</span><br>
+              <span class="small-note">Diplômé de l’École Nationale Supérieure d’Architecture de Versailles</span></p>
+            </div>
+            <div class="contact-block">
+              <p><strong data-i18n="contact.oledje.name">Oledje Agbo</strong><br>
+              <span data-i18n="contact.oledje.role">Architecte d’intérieur — Co-fondatrice</span></p>
+            </div>
+          </div>
+
+          <!-- Column 2: Studios -->
+          <div class="masthead-col">
+            <h3 data-i18n="contact.studios">Studios</h3>
+            <div class="contact-block">
+              <p><strong>GËSTÜ Studio — France</strong><br>
+                 <span style="font-size: 0.95em; color: var(--text-muted);">41 rue Raphaël Corby<br>78220 Viroflay — France</span>
+              </p>
+            </div>
+            <div class="contact-block">
+              <p><strong>GËSTÜ Studio — Sénégal</strong><br>
+                 <span style="font-size: 0.95em; color: var(--text-muted);">Liberté 6<br>N° 6501 — Dakar, Sénégal</span>
+              </p>
+            </div>
+          </div>
+
+          <!-- Column 3: Contact & Online -->
+          <div class="masthead-col">
+            <h3 data-i18n="contact.reach">Nous joindre</h3>
+            <div class="contact-block">
+              <p>Tél. +33 7 62 34 95 97</p>
+              <p style="margin-bottom: 2px;">E-mail <a href="mailto:fadelmbaye@gestu-studio.com" style="color: var(--text-color); text-decoration: none; border-bottom: 1px solid var(--border-color);">fadelmbaye@gestu-studio.com</a></p>
+              <p>E-mail <a href="mailto:oledjeagbo@gestu-studio.com" style="color: var(--text-color); text-decoration: none; border-bottom: 1px solid var(--border-color);">oledjeagbo@gestu-studio.com</a></p>
+            </div>
+            <h3 style="margin-top: 40px;" data-i18n="contact.online">En ligne</h3>
+            <div class="contact-block social-grid">
+              <p data-i18n="contact.website">Site web</p><p><a href="https://www.gestu-studio.com" target="_blank" class="hover-link">www.gestu-studio.com</a></p>
+              <p>Instagram</p><p><a href="#" target="_blank" class="hover-link">@gestu.studio</a></p>
+              <p>Pinterest</p><p><a href="#" target="_blank" class="hover-link">GËSTÜ Studio</a></p>
+              <p>LinkedIn</p><p><a href="#" target="_blank" class="hover-link">GËSTÜ Studio</a></p>
+              <p>Facebook</p><p><a href="#" target="_blank" class="hover-link">GËSTÜ Studio</a></p>
+            </div>
+          </div>
+
+          <!-- Column 4: Identity -->
+          <div class="masthead-col">
+            <h3 data-i18n="contact.identity">Identité</h3>
+            <div class="contact-block">
+              <p class="identity-list">
+                <span data-i18n="contact.id.g"><strong>G</strong> — Geste</span>
+                <span data-i18n="contact.id.e"><strong>E</strong> — Exploration</span>
+                <span data-i18n="contact.id.s"><strong>S</strong> — Study</span>
+                <span data-i18n="contact.id.t"><strong>T</strong> — Territory</span>
+                <span data-i18n="contact.id.u"><strong>Ü</strong> — Une recherche continue</span>
+              </p>
+            </div>
+            <div class="contact-block" style="margin-top: 40px;">
+              <p><strong>GËSTÜ</strong><br>
+              <span data-i18n="home.subtagline">Chercher · Comprendre · Concevoir</span></p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="contact-form-section">
+          <h3 class="form-title" data-i18n="contact.write_us">Nous écrire</h3>
+          <form class="contact-form">
+            <div class="form-row">
+              <div class="form-group">
+                <input type="text" id="name" placeholder="Votre nom" required />
+              </div>
+              <div class="form-group">
+                <input type="email" id="email" placeholder="Votre email" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <input type="text" id="subject" placeholder="Sujet" />
+            </div>
+            <div class="form-group">
+              <textarea id="message" rows="4" placeholder="Votre message" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn" data-i18n="contact.send_btn">Envoyer</button>
+          </form>
+        </div>
+
+        <!-- FOOTER ARCHITECTURAL WILMOTTE -->
+        <footer class="home-footer">
+          <div class="footer-container">
+            
+            <div class="footer-top">
+              <div class="footer-brand">
+                <span class="footer-logo">GËSTÜ</span>
+                <p class="footer-tagline" data-i18n="home.subtagline">Chercher · Comprendre · Concevoir</p>
+                <p class="footer-sub" data-i18n="footer.sub">Agence internationale d'architecture, de design et de recherche</p>
+              </div>
+
+              <div class="footer-nav-col">
+                <h4 data-i18n="footer.nav">NAVIGATION</h4>
+                <ul>
+                  <li><a href="#projets" data-i18n="nav.projets">PROJETS</a></li>
+                  <li><a href="#actualites" data-i18n="nav.actualites">ACTUALITÉS</a></li>
+                  <li><a href="#recherche" data-i18n="nav.recherche">RECHERCHE</a></li>
+                  <li><a href="#agence" data-i18n="nav.agence">AGENCE</a></li>
+                  <li><a href="#contact" data-i18n="nav.contact">CONTACT</a></li>
+                </ul>
+              </div>
+
+              <div class="footer-nav-col">
+                <h4 data-i18n="contact.studios">STUDIOS</h4>
+                <p><strong>Dakar</strong><br>Sénégal</p>
+                <p class="mt-2"><strong>Paris</strong><br>France</p>
+              </div>
+
+              <div class="footer-nav-col">
+                <h4 data-i18n="nav.contact">CONTACT</h4>
+                <p><a href="mailto:contact@gestu-studio.com">contact@gestu-studio.com</a></p>
+                <div class="footer-socials">
+                  <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+                  <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+                  <a href="https://pinterest.com" target="_blank" rel="noopener">Pinterest</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="footer-bottom">
+              <p>&copy; 2026 GËSTÜ Architecture. <span data-i18n="footer.rights">Tous droits réservés.</span></p>
+              <a href="#" class="back-to-top" data-i18n="footer.back_to_top">Haut de page ↑</a>
+            </div>
+
+          </div>
+        </footer>
+      </section>
+
+      <!-- AGENCE VIEW -->
+      <section id="view-agence" class="page-view">
+        
+        <!-- 1. HERO BANNER ARCHITECTURAL -->
+        <div class="agence-hero">
+          <div class="agence-hero-overlay"></div>
+          <div class="agence-hero-content reveal">
+            <span class="agence-badge" data-i18n="agence.badge">L'AGENCE · DEPUIS 2023</span>
+            <h1 data-i18n="agence.title">AGENCE GËSTÜ</h1>
+            <p class="agence-hero-tagline" data-i18n="home.subtagline">Chercher · Comprendre · Concevoir</p>
+          </div>
+        </div>
+
+        <!-- 2. SECTION INTRODUCTION & MANIFESTE -->
+        <div class="agence-intro-section reveal">
+          <div class="agence-container">
+            
+            <div class="agence-lead-block">
+              <h2 class="agence-section-headline" data-i18n="agence.intro">
+                <strong>GËSTÜ, qui signifie « recherche approfondie », est aussi la rencontre entre Geste et Study.</strong> L'agence est née en 2023 de la rencontre de Fadel Mbaye, architecte diplômé de l'ENSA Versailles, et Oledje Agbo, architecte d'intérieur, avec une conviction commune : la qualité d'un projet commence par la qualité de la recherche qui le précède.
+              </h2>
+            </div>
+
+            <div class="agence-editorial-grid">
+              <!-- Colonne Gauche : Les 4 Démarches Clés -->
+              <div class="agence-pillars-list">
+                
+                <div class="pillar-item">
+                  <span class="pillar-num">01</span>
+                  <div class="pillar-content">
+                    <h3 data-i18n="agence.pillar1.title">L'Observation avant la forme</h3>
+                    <p data-i18n="agence.p1">Chez GËSTÜ, l'architecture ne commence pas par une forme, mais par une observation. Comprendre un territoire, ses ressources, ses usages et ses cultures permet de construire des réponses justes et singulières. Chaque projet devient alors une recherche où l'espace, la lumière, la matière et les usages sont pensés ensemble.</p>
+                  </div>
+                </div>
+
+                <div class="pillar-item">
+                  <span class="pillar-num">02</span>
+                  <div class="pillar-content">
+                    <h3 data-i18n="agence.pillar2.title">Double Culture Afrique & Europe</h3>
+                    <p data-i18n="agence.p2">Notre pratique se situe à la rencontre de l'Afrique et de l'Europe, deux territoires qui nourrissent notre regard et notre manière de concevoir. Cette double culture nous permet de croiser les savoir-faire, les influences et les techniques pour imaginer une architecture contemporaine, tout en restant profondément ancrée dans son contexte.</p>
+                  </div>
+                </div>
+
+                <div class="pillar-item">
+                  <span class="pillar-num">03</span>
+                  <div class="pillar-content">
+                    <h3 data-i18n="agence.pillar3.title">Matières Naturelles & Biosourcées</h3>
+                    <p data-i18n="agence.p3">Nous accordons également une place importante aux matériaux biosourcés, naturels et locaux, ainsi qu'aux savoir-faire qui les accompagnent. Terre, bois, pierre, fibres végétales ou matériaux issus de ressources locales peuvent ainsi dialoguer avec des techniques contemporaines pour créer des espaces durables, sensibles et adaptés à leur environnement.</p>
+                  </div>
+                </div>
+
+                <div class="pillar-item">
+                  <span class="pillar-num">04</span>
+                  <div class="pillar-content">
+                    <h3 data-i18n="agence.pillar4.title">Architectures Singulières & Durables</h3>
+                    <p data-i18n="agence.p4">À travers son développement dans plusieurs pays africains, GËSTÜ souhaite créer des architectures qui dépassent les tendances et les standards : des lieux avec une identité propre, où chaque choix possède une intention et où chaque projet raconte une histoire.</p>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- Colonne Droite : Visuel Architectural Cadré -->
+              <div class="agence-visual-column">
+                <div class="agence-visual-frame">
+                  <img src="images/agence/side.jpg" alt="Atelier GËSTÜ & Recherche de Matières" loading="lazy">
+                  <div class="visual-caption">
+                    <span class="caption-tag">STUDIO GËSTÜ</span>
+                    <span class="caption-desc">Expérimentation des formes, maquettes et matières brutes</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. BANNIÈRE CITATION MANIFESTE (PLEINE LARGEUR) -->
+        <div class="agence-quote-strip reveal">
+          <div class="agence-quote-inner">
+            <span class="quote-symbol">“</span>
+            <p class="quote-text" data-i18n="agence.manifeste">
+              Nous ne croyons pas aux réponses toutes faites. Nous croyons à l'observation, à l'écoute, à l'expérimentation. Chaque projet mérite son propre cheminement. Avant de dessiner, nous analysons. Avant de proposer, nous recherchons. Avant de construire, nous comprenons. Notre architecture ne naît pas d'un style imposé, mais d'une démarche qui place le lieu, les usages et le maître d'ouvrage au centre de chaque décision.
+            </p>
+            <span class="quote-author">— Manifeste GËSTÜ Architecture</span>
+          </div>
+        </div>
+
+        <!-- 4. SECTION LES FONDATEURS (GESTU & STUDY) -->
+        <div class="agence-team-section reveal">
+          <div class="agence-container">
+            
+            <div class="team-section-header">
+              <span class="section-kicker" data-i18n="agence.founders.kicker">DUO FONDATEUR</span>
+              <h2 class="team-main-title" data-i18n="agence.founders.title">LE GESTE & LE STUDY</h2>
+              <p class="team-intro-p" data-i18n="agence.founders.subtitle">
+                Deux approches complémentaires unies par la même exigence : la rigueur de l'analyse architecturale et la sensibilité du geste artistique.
+              </p>
+            </div>
+
+            <!-- PROFIL 1 : FADEL MBAYE -->
+            <div class="founder-card founder-study">
+              <div class="founder-photo-col">
+                <div class="founder-img-box">
+                  <img src="images/agence/fadel.jpg" alt="Fadel Mbaye — Architecte Fondateur GËSTÜ" loading="lazy">
+                  <div class="founder-badge">STUDY</div>
+                </div>
+              </div>
+              <div class="founder-text-col">
+                <div class="founder-header">
+                  <h3 data-i18n="agence.fadel.name">FADEL MBAYE</h3>
+                  <p class="founder-role" data-i18n="agence.fadel.role">Architecte · Cofondateur</p>
+                  <p class="founder-diploma" data-i18n="agence.fadel.note">Diplômé de l'École Nationale Supérieure d'Architecture de Versailles</p>
+                </div>
+
+                <div class="founder-quote-lead">
+                  <p data-i18n="agence.fadel.q1">« Je me reconnais davantage dans le Study de GËSTÜ. »</p>
+                </div>
+
+                <div class="founder-body-text">
+                  <p data-i18n="agence.fadel.q2">J'aime prendre le temps d'observer et de questionner avant de prendre une décision. Comprendre un lieu, faire émerger une idée, la remettre en question puis l'affiner jusqu'à trouver son évidence est la partie du projet qui m'anime le plus.</p>
+                  <p data-i18n="agence.fadel.q3">Ce qui me passionne particulièrement, c'est la recherche du concept. Celui qui révèle l'identité d'un projet, lui donne sa cohérence et guide naturellement chaque décision.</p>
+                  <p data-i18n="agence.fadel.q4">Le dessin est le prolongement de ma pensée : il me permet d'explorer différentes pistes, de faire dialoguer les idées et de donner progressivement forme à un concept.</p>
+                  <p data-i18n="agence.fadel.q5">J'aime construire des projets dont l'idée fondatrice reste lisible du premier croquis jusqu'au moindre détail, afin que chaque choix participe à une vision cohérente de l'ensemble.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- PROFIL 2 : OLEDJE AGBO -->
+            <div class="founder-card founder-geste">
+              <div class="founder-photo-col">
+                <div class="founder-img-box">
+                  <img src="images/agence/oledje.jpg" alt="Oledje Agbo — Architecte d'Intérieur Cofondatrice GËSTÜ" loading="lazy">
+                  <div class="founder-badge">GESTE</div>
+                </div>
+              </div>
+              <div class="founder-text-col">
+                <div class="founder-header">
+                  <h3 data-i18n="agence.oledje.name">OLEDJE AGBO</h3>
+                  <p class="founder-role" data-i18n="agence.oledje.role">Architecte d'intérieur · Cofondatrice</p>
+                </div>
+
+                <div class="founder-quote-lead">
+                  <p data-i18n="agence.oledje.q1">« Si la recherche est le point de départ de chacun de nos projets, je me reconnais particulièrement dans le Geste de GËSTÜ. »</p>
+                </div>
+
+                <div class="founder-body-text">
+                  <p data-i18n="agence.oledje.q2">Le travail de la matière, la réalisation de maquettes, dessin numérique et mes expérimentations artistiques sont pour moi des moyens d'explorer les idées autrement.</p>
+                  <p data-i18n="agence.oledje.q3">Manipuler, assembler, toucher, expérimenter... ces gestes prolongent la réflexion et nourrissent ma manière de concevoir les espaces.</p>
+                  <p data-i18n="agence.oledje.q4">Je suis convaincue que l'architecture ne se vit pas uniquement par le regard. Elle se découvre aussi par le toucher, la texture d'un matériau, la chaleur d'un bois, la rugosité d'une pierre, la douceur d'un textile ou la lumière qui glisse sur une surface. Ces émotions, souvent silencieuses, participent pleinement à l'identité d'un lieu.</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- 5. BANDEAU DE RECHERCHE & MOTTO -->
+        <div class="agence-motto-section reveal">
+          <div class="motto-box">
+            <span class="motto-logo">GËSTÜ</span>
+            <h2 data-i18n="home.subtagline">Chercher · Comprendre · Concevoir</h2>
+            <p class="motto-sub" data-i18n="footer.sub">Agence internationale d'architecture, de design et de recherche</p>
+          </div>
+        </div>
+
+        <!-- FOOTER ARCHITECTURAL WILMOTTE -->
+        <footer class="home-footer">
+          <div class="footer-container">
+            
+            <div class="footer-top">
+              <div class="footer-brand">
+                <span class="footer-logo">GËSTÜ</span>
+                <p class="footer-tagline" data-i18n="home.subtagline">Chercher · Comprendre · Concevoir</p>
+                <p class="footer-sub" data-i18n="footer.sub">Agence internationale d'architecture, de design et de recherche</p>
+              </div>
+
+              <div class="footer-nav-col">
+                <h4 data-i18n="footer.nav">NAVIGATION</h4>
+                <ul>
+                  <li><a href="#projets" data-i18n="nav.projets">PROJETS</a></li>
+                  <li><a href="#actualites" data-i18n="nav.actualites">ACTUALITÉS</a></li>
+                  <li><a href="#recherche" data-i18n="nav.recherche">RECHERCHE</a></li>
+                  <li><a href="#agence" data-i18n="nav.agence">AGENCE</a></li>
+                  <li><a href="#contact" data-i18n="nav.contact">CONTACT</a></li>
+                </ul>
+              </div>
+
+              <div class="footer-nav-col">
+                <h4 data-i18n="contact.studios">STUDIOS</h4>
+                <p><strong>Dakar</strong><br>Sénégal</p>
+                <p class="mt-2"><strong>Paris</strong><br>France</p>
+              </div>
+
+              <div class="footer-nav-col">
+                <h4 data-i18n="nav.contact">CONTACT</h4>
+                <p><a href="mailto:contact@gestu-studio.com">contact@gestu-studio.com</a></p>
+                <div class="footer-socials">
+                  <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+                  <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+                  <a href="https://pinterest.com" target="_blank" rel="noopener">Pinterest</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="footer-bottom">
+              <p>&copy; 2026 GËSTÜ Architecture. <span data-i18n="footer.rights">Tous droits réservés.</span></p>
+              <a href="#" class="back-to-top" data-i18n="footer.back_to_top">Haut de page ↑</a>
+            </div>
+
+          </div>
+        </footer>
+      </section>
+
+      <!-- ACTUALITÉS VIEW -->
+      <section id="view-actualites" class="page-view">
+        <div class="actualites-hero">
+          <div class="actualites-hero-content">
+            <h1 data-i18n="actualites.title">ACTUALITÉS</h1>
+            <h2 data-i18n="actualites.live_title">Faire vivre l\'architecture</h2>
+          </div>
+        </div>
+        
+        <div class="actualites-intro">
+          <p data-i18n="actualites.p1">Chez GËSTÜ, l’actualité de l’agence raconte autant nos projets que les idées qui les font naître. Cette rubrique rassemble les concours, publications, collaborations, événements et expérimentations qui accompagnent notre évolution.</p>
+          <p data-i18n="actualites.p2">Elle accueillera notamment le Livret GËSTÜ, conçu comme une trace de notre démarche et de nos recherches. Nous y partagerons également notre participation au concours Kaira Looro 2025, ainsi que notre projet Primary School in Senegal, distingué par une Mention Honorable et publié en 2026 sur des plateformes dédiées à l'architecture et sur Pinterest.</p>
+          <p data-i18n="actualites.p3">L’actualité de GËSTÜ sera aussi l’occasion de présenter les initiatives développées autour de la recherche et de l’innovation, notamment notre projet d’IA consacré à la recherche sur l’architecture africaine.</p>
+        </div>
+
+        <div class="actualites-grid">
+          <!-- Card 1 -->
+          <div class="actualite-card">
+            <div class="actualite-img" style="background-image: url('images/actualites/actu-card-1.png');"></div>
+            <h3 data-i18n="actualites.card1.title">LIVRET GËSTÜ</h3>
+            <p data-i18n="actualites.card1.desc">Découvrez notre livret qui présente notre démarche, nos projets et notre vision de l'architecture.</p>
+            <a href="#" class="actualite-link" data-i18n="actualites.card1.tag">À VENIR</a>
+          </div>
+          <!-- Card 2 -->
+          <div class="actualite-card">
+            <a href="#projet-ecole-primaire-kaira-looro" style="text-decoration: none; color: inherit; display: block;">
+              <div class="actualite-img" style="background-image: url('images/actualites/actu-card-2.png');"></div>
+            </a>
+            <h3 data-i18n="actualites.card2.title">KAIRA LOORO 2025</h3>
+            <p data-i18n="actualites.card2.desc">GËSTÜ participe au concours Kaira Looro 2025 avec un projet d'école ancré dans son territoire et ses ressources.</p>
+            <a href="#projet-ecole-primaire-kaira-looro" class="actualite-link" data-i18n="actualites.card.discover">DÉCOUVRIR</a>
+          </div>
+          <!-- Card 3 -->
+          <div class="actualite-card">
+            <a href="#projet-primary-school-senegal" style="text-decoration: none; color: inherit; display: block;">
+              <div class="actualite-img" style="background-image: url('images/actualites/actu-card-3.png');"></div>
+            </a>
+            <h3 data-i18n="actualites.card3.title_alt">PRIMARY SCHOOL IN SENEGAL</h3>
+            <p data-i18n="actualites.card3.desc_alt">Mention Honorable pour notre projet au concours international "Primary School in Senegal". Publication sur des plateformes architecturales et Pinterest en 2026.</p>
+            <a href="#projet-primary-school-senegal" class="actualite-link" data-i18n="actualites.card.discover">DÉCOUVRIR</a>
+          </div>
+          <!-- Card 4 -->
+          <div class="actualite-card">
+            <a href="#recherche" style="text-decoration: none; color: inherit; display: block;">
+              <div class="actualite-img" style="background-image: url('images/actualites/actu-card-4.png');"></div>
+            </a>
+            <h3 data-i18n="actualites.card4.title">IA GËSTÜ</h3>
+            <p data-i18n="actualites.card4.desc">GËSTÜ développe une intelligence artificielle dédiée à la recherche sur l'architecture africaine : une base de données vivante pour documenter, comprendre et inspirer.</p>
+            <a href="#recherche" class="actualite-link" data-i18n="actualites.card.learn_more">EN SAVOIR PLUS</a>
+          </div>
+        </div>
+
+        <!-- FOOTER ARCHITECTURAL WILMOTTE -->
+        <footer class="home-footer">
+          <div class="footer-container">
+            
+            <div class="footer-top">
+              <div class="footer-brand">
+                <span class="footer-logo">GËSTÜ</span>
+                <p class="footer-tagline" data-i18n="home.subtagline">Chercher · Comprendre · Concevoir</p>
+                <p class="footer-sub" data-i18n="footer.sub">Agence internationale d'architecture, de design et de recherche</p>
+              </div>
+
+              <div class="footer-nav-col">
+                <h4 data-i18n="footer.nav">NAVIGATION</h4>
+                <ul>
+                  <li><a href="#projets" data-i18n="nav.projets">PROJETS</a></li>
+                  <li><a href="#actualites" data-i18n="nav.actualites">ACTUALITÉS</a></li>
+                  <li><a href="#recherche" data-i18n="nav.recherche">RECHERCHE</a></li>
+                  <li><a href="#agence" data-i18n="nav.agence">AGENCE</a></li>
+                  <li><a href="#contact" data-i18n="nav.contact">CONTACT</a></li>
+                </ul>
+              </div>
+
+              <div class="footer-nav-col">
+                <h4 data-i18n="contact.studios">STUDIOS</h4>
+                <p><strong>Dakar</strong><br>Sénégal</p>
+                <p class="mt-2"><strong>Paris</strong><br>France</p>
+              </div>
+
+              <div class="footer-nav-col">
+                <h4 data-i18n="nav.contact">CONTACT</h4>
+                <p><a href="mailto:contact@gestu-studio.com">contact@gestu-studio.com</a></p>
+                <div class="footer-socials">
+                  <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+                  <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+                  <a href="https://pinterest.com" target="_blank" rel="noopener">Pinterest</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="footer-bottom">
+              <p>&copy; 2026 GËSTÜ Architecture. <span data-i18n="footer.rights">Tous droits réservés.</span></p>
+              <a href="#" class="back-to-top" data-i18n="footer.back_to_top">Haut de page ↑</a>
+            </div>
+
+          </div>
+        </footer>
+      </section>
+
+      <section id="view-project-detail" class="page-view">
+        <div class="project-layout">
+          <!-- Left Column: Info -->
+          <div class="project-info">
+            <div class="project-header">
+              <h1 class="project-title" id="detail-title">TITRE DU PROJET</h1>
+              <div class="project-meta">
+                <span id="detail-location">Lieu</span><br>
+                <span id="detail-year">Année</span>
+              </div>
+            </div>
+            
+            <p style="line-height: 1.6; font-size: 0.95em; color: var(--text-muted); margin-bottom: 15px;" class="project-desc" id="detail-desc">
+              Description du projet...
+            </p>
+            
+            <div class="project-specs" style="font-size: 0.8rem; opacity: 0.8; margin-bottom: 2rem; line-height: 1.6;">
+              <div id="detail-category-row" style="display:none;"><strong data-i18n="projects.detail.category">Catégorie:</strong> <span id="detail-category">-</span></div>
+              <div id="detail-programme-row" style="display:none;"><strong data-i18n="projects.detail.programme">Programme:</strong> <span id="detail-programme">-</span></div>
+              <div><strong data-i18n="projects.detail.surface">Surface:</strong> <span id="detail-surface">-</span></div>
+              <div><strong data-i18n="projects.detail.mission">Mission:</strong> <span id="detail-mission">-</span></div>
+              <div><strong data-i18n="projects.detail.status">Statut:</strong> <span id="detail-status">-</span></div>
+            </div>
+            
+            <div class="project-share">
+              <div class="share-title" data-i18n="projects.detail.share">PARTAGER</div>
+              <div class="share-icons">
+                <a href="#" class="share-btn share-fb" aria-label="Partager sur Facebook">f</a>
+                <a href="#" class="share-btn share-in" aria-label="Partager sur LinkedIn">in</a>
+                <a href="#" class="share-btn share-pi" aria-label="Partager sur Pinterest">p</a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Middle Column: Main Visual -->
+          <div class="project-visual">
+            <img src="" id="detail-main-img" alt="Visuel Principal" class="project-main-img">
+          </div>
+          
+          <!-- Right Column: Thumbnails -->
+          <div class="project-thumbnails" id="detail-thumbnails">
+          </div>
+        </div>
+
+        <!-- FOOTER ARCHITECTURAL WILMOTTE -->
+        <footer class="home-footer">
+          <div class="footer-container">
+            
+            <div class="footer-top">
+              <div class="footer-brand">
+                <span class="footer-logo">GËSTÜ</span>
+                <p class="footer-tagline" data-i18n="home.subtagline">Chercher · Comprendre · Concevoir</p>
+                <p class="footer-sub" data-i18n="footer.sub">Agence internationale d'architecture, de design et de recherche</p>
+              </div>
+
+              <div class="footer-nav-col">
+                <h4 data-i18n="footer.nav">NAVIGATION</h4>
+                <ul>
+                  <li><a href="#projets" data-i18n="nav.projets">PROJETS</a></li>
+                  <li><a href="#actualites" data-i18n="nav.actualites">ACTUALITÉS</a></li>
+                  <li><a href="#recherche" data-i18n="nav.recherche">RECHERCHE</a></li>
+                  <li><a href="#agence" data-i18n="nav.agence">AGENCE</a></li>
+                  <li><a href="#contact" data-i18n="nav.contact">CONTACT</a></li>
+                </ul>
+              </div>
+
+              <div class="footer-nav-col">
+                <h4 data-i18n="contact.studios">STUDIOS</h4>
+                <p><strong>Dakar</strong><br>Sénégal</p>
+                <p class="mt-2"><strong>Paris</strong><br>France</p>
+              </div>
+
+              <div class="footer-nav-col">
+                <h4 data-i18n="nav.contact">CONTACT</h4>
+                <p><a href="mailto:contact@gestu-studio.com">contact@gestu-studio.com</a></p>
+                <div class="footer-socials">
+                  <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+                  <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+                  <a href="https://pinterest.com" target="_blank" rel="noopener">Pinterest</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="footer-bottom">
+              <p>&copy; 2026 GËSTÜ Architecture. <span data-i18n="footer.rights">Tous droits réservés.</span></p>
+              <a href="#" class="back-to-top" data-i18n="footer.back_to_top">Haut de page ↑</a>
+            </div>
+
+          </div>
+        </footer>
+      </section>
+    </main>
+
+  </div>
+
+  <!-- LIGHTBOX OVERLAY -->
+  <div id="lightbox" class="lightbox">
+    <div class="lightbox-content">
+      <img id="lightbox-img" src="" alt="Plein écran">
+    </div>
+    <div class="lightbox-close" data-i18n="lightbox.close">Fermer ✕</div>
+  </div>
+
+  <script type="module" src="./projects.js"></script>
+  <script type="module" src="./webgl-recherche.js?v=4"></script>
+  <script type="module" src="./main.js?v=116"></script>
+</body>
+</html>
