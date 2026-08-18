@@ -3680,31 +3680,93 @@ html, body {
 
   /* Universal Footer */
   .home-footer {
-    padding: 4rem 1.2rem 2rem;
-    margin-top: 3rem;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 3.5rem 1.2rem 2.5rem !important;
+    margin-top: 3rem !important;
+    box-sizing: border-box !important;
+  }
+
+  .footer-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
   }
 
   .footer-top {
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
-    text-align: center;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 2rem 1.2rem !important;
+    text-align: left !important;
+    align-items: start !important;
+    margin-bottom: 2.2rem !important;
   }
 
   .home-footer .footer-brand {
-    align-items: center;
-    text-align: center;
-    margin: 0 auto;
+    grid-column: 1 / -1 !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+    max-width: 100% !important;
+    margin: 0 0 0.5rem 0 !important;
+  }
+
+  .home-footer .footer-logo {
+    font-size: 2rem !important;
+    margin-bottom: 0.4rem !important;
+  }
+
+  .home-footer .footer-tagline {
+    font-size: 0.85rem !important;
+    margin-bottom: 0.4rem !important;
+    white-space: normal !important;
+  }
+
+  .home-footer .footer-sub {
+    font-size: 0.8rem !important;
+    line-height: 1.5 !important;
+  }
+
+  .home-footer .footer-nav-col {
+    text-align: left !important;
+  }
+
+  .home-footer .footer-nav-col h4 {
+    font-size: 0.82rem !important;
+    letter-spacing: 0.12em !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .home-footer .footer-nav-col ul li {
+    margin-bottom: 0.6rem !important;
+  }
+
+  .home-footer .footer-nav-col ul li a {
+    font-size: 0.78rem !important;
+  }
+
+  .home-footer .footer-nav-col p {
+    font-size: 0.8rem !important;
+    line-height: 1.5 !important;
   }
 
   .footer-socials {
-    justify-content: center;
+    justify-content: flex-start !important;
+    gap: 1.2rem !important;
+    margin-top: 0.8rem !important;
+  }
+
+  .footer-socials a {
+    font-size: 0.75rem !important;
   }
 
   .home-footer .footer-bottom {
-    flex-direction: column;
-    gap: 1.2rem;
-    text-align: center;
-    padding-top: 1.5rem;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.8rem !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+    padding-top: 1.5rem !important;
   }
 }
 
