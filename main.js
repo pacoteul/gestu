@@ -470,7 +470,37 @@ function initApp() {
         document.getElementById('detail-surface').textContent = project.surface;
         document.getElementById('detail-mission').textContent = window.currentLang === 'en' && project.missionEn ? project.missionEn : project.mission;
         document.getElementById('detail-status').textContent = window.currentLang === 'en' && project.statusEn ? project.statusEn : project.status;
-        document.getElementById('detail-desc').innerHTML = window.currentLang === 'en' && project.descriptionEn ? project.descriptionEn : project.description;
+        let descHtml = window.currentLang === 'en' && project.descriptionEn ? project.descriptionEn : project.description;
+        
+        if (project.gallery && project.gallery.length > 1) {
+            let paragraphs = descHtml.split('<br><br>');
+            let mobileImages = project.gallery.slice(1);
+            let newDescHtml = '';
+            
+            for (let i = 0; i < Math.max(paragraphs.length, mobileImages.length); i++) {
+                if (i < paragraphs.length) {
+                    newDescHtml += `<span class="desc-text-block">${paragraphs[i]}</span>`;
+                }
+                if (i < mobileImages.length) {
+                    const item = mobileImages[i];
+                    const src = typeof item === 'string' ? item : item.src;
+                    newDescHtml += `<img src="${src}" class="mobile-interleaved-img" data-src="${src}" alt="Project View">`;
+                }
+            }
+            document.getElementById('detail-desc').innerHTML = newDescHtml;
+            
+            // Add click listeners to the newly injected interleaved images
+            document.querySelectorAll('.mobile-interleaved-img').forEach(img => {
+                img.onclick = () => {
+                    const lightbox = document.getElementById('lightbox');
+                    const lightboxImg = document.getElementById('lightbox-img');
+                    lightboxImg.src = img.getAttribute('data-src');
+                    lightbox.classList.add('active');
+                };
+            });
+        } else {
+            document.getElementById('detail-desc').innerHTML = descHtml.split('<br><br>').map(p => `<span class="desc-text-block">${p}</span>`).join('');
+        }
 
         const catRow = document.getElementById('detail-category-row');
         const catEl = document.getElementById('detail-category');
