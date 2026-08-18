@@ -77,9 +77,9 @@ export const i18n = {
         "home.news3.link": "Lire l'article",
 
         // Projets Page
-        "projects.title": "NOS PROJETS",
+        "projects.title": "PROJETS",
         "projects.manifesto": "GËSTÜ est une agence d'architecture et de recherche atypique par l'éclectisme de sa production. La diversité des échelles de projet et des programmes que nous concevons ne cesse de surprendre. Nous établissons un lien sensible entre l'environnement bâti et le milieu naturel afin de créer des expériences architecturales durables.",
-        "projects.filter.selection": "SÉLECTION DE PROJETS",
+        "projects.filter.selection": "SÉLECTION",
         "projects.filter.tous": "TOUS LES PROJETS",
         "projects.filter.architecture": "ARCHITECTURE",
         "projects.filter.rehab": "RÉHABILITATION & INTÉRIEURS",
@@ -277,9 +277,9 @@ export const i18n = {
         "home.news3.link": "Read article",
 
         // Projets Page
-        "projects.title": "OUR PROJECTS",
+        "projects.title": "PROJECTS",
         "projects.manifesto": "GËSTÜ is an atypical architecture and research studio characterized by the eclecticism of its production. The diversity of project scales and programs we design never ceases to surprise. We establish a sensitive link between the built environment and the natural habitat to create sustainable architectural experiences.",
-        "projects.filter.selection": "SELECTED PROJECTS",
+        "projects.filter.selection": "SELECTION",
         "projects.filter.tous": "ALL PROJECTS",
         "projects.filter.architecture": "ARCHITECTURE",
         "projects.filter.rehab": "REHABILITATION & INTERIORS",
