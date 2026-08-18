@@ -908,16 +908,22 @@ html, body {
 
 .deep-dive-content {
   display: grid;
-  grid-template-columns: 1fr 2.2fr;
-  gap: 5rem;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 4.5rem;
   align-items: start;
 }
 
+.deep-dive-text {
+  text-align: left;
+  width: 100%;
+}
+
 .deep-dive-text p {
-  font-size: 1.2rem;
-  line-height: 1.95;
+  font-size: 1.12rem;
+  line-height: 1.85;
   color: var(--text-muted);
-  margin-bottom: 2rem;
+  margin-bottom: 1.8rem;
+  text-align: left;
 }
 
 .deep-dive-media {
@@ -3396,14 +3402,60 @@ html, body {
     margin-top: 2rem;
   }
 
+  .deep-dive-header {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .deep-dive-titles {
+    text-align: left;
+    width: 100%;
+  }
+
   .deep-dive-specs {
     grid-template-columns: 1fr 1fr;
     gap: 1.2rem;
+    text-align: left;
+    width: 100%;
+  }
+
+  .spec-item {
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  .deep-dive-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+    text-align: left;
+  }
+
+  .deep-dive-text {
+    width: 100%;
+    text-align: left;
+  }
+
+  .deep-dive-text p {
+    text-align: left;
+    font-size: 1.02rem;
+    line-height: 1.75;
+    margin-bottom: 1.2rem;
+  }
+
+  .deep-dive-text .btn-wilmotte {
+    display: inline-block;
+    align-self: flex-start;
+    text-align: left;
   }
 
   .deep-dive-media {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+    display: block;
     width: 100%;
   }
 
