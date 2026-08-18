@@ -4064,28 +4064,38 @@ html, body {
 
 @media (max-width: 768px) {
   .projects-wilmotte-container {
-    padding: 2.2rem 1.2rem 5rem !important;
+    padding: 6.5rem 1.2rem 5rem !important;
     width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .projects-wilmotte-header {
+    width: 100% !important;
+    margin-bottom: 2rem !important;
+    text-align: left !important;
   }
   .projects-main-title {
-    font-size: clamp(1.85rem, 5.5vw, 2.6rem) !important;
+    font-size: clamp(2rem, 7vw, 2.6rem) !important;
     line-height: 1.15 !important;
-    margin-bottom: 1rem !important;
-  }
-  .projects-editorial-manifesto {
-    font-size: 0.98rem !important;
-    line-height: 1.75 !important;
-    margin-bottom: 2.2rem !important;
+    margin-bottom: 1.2rem !important;
+    text-align: left !important;
     width: 100% !important;
   }
+  .projects-editorial-manifesto {
+    font-size: 1rem !important;
+    line-height: 1.75 !important;
+    margin-bottom: 2.5rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    text-align: left !important;
+  }
   .projects-staggered-gallery {
-    gap: 2.5rem !important;
+    gap: 2.8rem !important;
     width: 100% !important;
   }
   .wilmotte-row {
     display: flex !important;
     flex-direction: column !important;
-    gap: 2.5rem !important;
+    gap: 2.8rem !important;
     width: 100% !important;
   }
   .wilmotte-card {
@@ -4109,6 +4119,7 @@ html, body {
     width: 100% !important;
     aspect-ratio: 16 / 10 !important;
     border-radius: 3px !important;
+    overflow: hidden !important;
   }
   .wilmotte-img-box img {
     width: 100% !important;
@@ -4123,36 +4134,45 @@ html, body {
     gap: 0.35rem !important;
     padding: 0.8rem 0 0.4rem !important;
     width: 100% !important;
+    text-align: left !important;
   }
   .wilmotte-caption-title {
-    font-size: 1.02rem !important;
+    font-size: 1.05rem !important;
     line-height: 1.35 !important;
     letter-spacing: 0.05em !important;
     white-space: normal !important;
     word-break: normal !important;
     width: 100% !important;
+    text-align: left !important;
   }
   .wilmotte-caption-loc {
-    font-size: 0.8rem !important;
+    font-size: 0.82rem !important;
     letter-spacing: 0.08em !important;
     white-space: normal !important;
     word-break: normal !important;
+    text-align: left !important;
   }
 }
 
 @media (max-width: 480px) {
   .projects-wilmotte-container {
-    padding: 1.8rem 1rem 4rem !important;
+    padding: 5.8rem 1rem 4rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
   }
   .projects-main-title {
-    font-size: 1.8rem !important;
+    font-size: 1.95rem !important;
+    text-align: left !important;
   }
   .projects-editorial-manifesto {
-    font-size: 0.92rem !important;
+    font-size: 0.95rem !important;
     line-height: 1.7 !important;
+    text-align: left !important;
+    width: 100% !important;
   }
   .wilmotte-img-box {
     aspect-ratio: 16 / 10 !important;
+    width: 100% !important;
   }
 }
 
