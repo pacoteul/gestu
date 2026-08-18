@@ -921,9 +921,8 @@ html, body {
 }
 
 .deep-dive-media {
-  display: grid;
-  grid-template-columns: 1.8fr 1.2fr;
-  gap: 2.5rem;
+  display: block;
+  width: 100%;
 }
 
 .deep-img-large, .deep-img-portrait {

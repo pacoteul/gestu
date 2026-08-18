@@ -52,7 +52,6 @@ window.projectsData = [
         "descriptionEn": "Azuria House offers high-end contemporary architecture designed around light, comfort, and an intimate dialogue between interior spaces and the garden. The project is organized around a living space generously opened to the outside, providing a seamless visual continuity between the living room, the terrace, and the landscape.<br><br>The facades combine clean geometric lines, large glass panes, and refined wood louvers, creating an architecture that is simultaneously understated, warm, and tailored to Dakar's climate. Inside, wood craftsmanship, natural textures, and integrated architectural lighting enhance the residence's welcoming and sophisticated ambiance.<br><br>The landscape design seamlessly extends the living quarters with timber deck terraces, tropical vegetation, a lap pool, and stone pathways, making the garden a true open-air living extension of the home.",
         "image": "/images/projects/azuria-facade.png",
         "gallery": [
-            { "src": "/images/projects/azuria-facade.png", "title": "Façade Principale & Entrée" },
             { "src": "/images/projects/azuria-terrasse-piscine.png", "title": "Terrasse, Jardin & Piscine" },
             { "src": "/images/projects/azuria-jardin-sejour.png", "title": "Continuité Séjour & Extérieur" },
             { "src": "/images/projects/azuria-interieur.png", "title": "Espaces de Vie & Salon" }
