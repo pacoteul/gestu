@@ -1490,17 +1490,21 @@ html, body {
   box-shadow: none;
   padding: clamp(4.5rem, 6vw, 6rem) clamp(1.5rem, 3.5vw, 3.5rem) 2.5rem;
   color: #111111;
-  width: 100%;
-  box-sizing: border-box;
-  margin-top: 4rem;
+  width: 100% !important;
+  min-width: 100% !important;
+  max-width: 100% !important;
+  margin: 4rem 0 0 0 !important;
+  box-sizing: border-box !important;
+  display: block !important;
+  clear: both !important;
   transition: background 0.5s ease, border-color 0.5s ease, color 0.5s ease;
 }
 
 .footer-container {
-  width: 100%;
-  max-width: 1560px;
-  margin: 0 auto;
-  box-sizing: border-box;
+  width: 100% !important;
+  max-width: 1560px !important;
+  margin: 0 auto !important;
+  box-sizing: border-box !important;
 }
 
 .footer-top {
@@ -4226,51 +4230,46 @@ html, body {
   }
 
   /* Wilmotte Rows on Mobile: Alternance de rangées 2 colonnes et 1 colonne */
-  .wilmotte-row {
-    display: grid !important;
-    column-gap: 6px !important;
-    row-gap: 1.8rem !important;
-    width: 100% !important;
-    margin-top: 0 !important;
-  }
-
-  /* Patterns à 2 cartes -> 2 colonnes côte à côte format portrait (Lutetia / Riviera) */
+  .wilmotte-row,
   .wilmotte-row.pattern-asym-left,
   .wilmotte-row.pattern-spaced,
   .wilmotte-row.pattern-asym-right,
-  .wilmotte-row.pattern-offset {
+  .wilmotte-row.pattern-offset,
+  .wilmotte-row.pattern-triad,
+  .wilmotte-row.pattern-triad-alt {
+    display: grid !important;
     grid-template-columns: 1fr 1fr !important;
+    column-gap: 6px !important;
+    row-gap: 1.8rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-top: 0 !important;
+    box-sizing: border-box !important;
   }
 
-  .wilmotte-row.pattern-asym-left .wilmotte-card:nth-child(n),
-  .wilmotte-row.pattern-spaced .wilmotte-card:nth-child(n),
-  .wilmotte-row.pattern-asym-right .wilmotte-card:nth-child(n),
-  .wilmotte-row.pattern-offset .wilmotte-card:nth-child(n) {
+  .wilmotte-card {
     grid-column: auto !important;
     margin-top: 0 !important;
     width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
   }
 
-  .wilmotte-row.pattern-asym-left .wilmotte-img-box,
-  .wilmotte-row.pattern-spaced .wilmotte-img-box,
-  .wilmotte-row.pattern-asym-right .wilmotte-img-box,
-  .wilmotte-row.pattern-offset .wilmotte-img-box {
+  .wilmotte-img-box {
     aspect-ratio: 3 / 4 !important;
     width: 100% !important;
+    max-width: 100% !important;
     border-radius: 0 !important;
+    box-sizing: border-box !important;
   }
 
-  /* Patterns à 3 cartes (triade) -> 1 carte panoramique pleine largeur + 2 cartes portrait côte à côte */
-  .wilmotte-row.pattern-triad,
-  .wilmotte-row.pattern-triad-alt {
-    grid-template-columns: 1fr 1fr !important;
-  }
-
+  /* Patterns à 3 cartes (triade) -> 1 carte panoramique pleine largeur (span 2) + 2 cartes portrait côte à côte */
   .wilmotte-row.pattern-triad .wilmotte-card:nth-child(1),
   .wilmotte-row.pattern-triad-alt .wilmotte-card:nth-child(1) {
     grid-column: 1 / -1 !important;
     margin-top: 0 !important;
     width: 100% !important;
+    max-width: 100% !important;
   }
 
   .wilmotte-row.pattern-triad .wilmotte-card:nth-child(1) .wilmotte-img-box,
@@ -4287,6 +4286,7 @@ html, body {
     grid-column: auto !important;
     margin-top: 0 !important;
     width: 100% !important;
+    max-width: 100% !important;
   }
 
   .wilmotte-row.pattern-triad .wilmotte-card:nth-child(2) .wilmotte-img-box,
