@@ -937,12 +937,12 @@ html, body {
 
 .deep-img-large {
   aspect-ratio: 16 / 10;
-  min-height: 480px;
+  width: 100%;
 }
 
 .deep-img-portrait {
   aspect-ratio: 3 / 4;
-  min-height: 480px;
+  width: 100%;
 }
 
 .deep-img-large img, .deep-img-portrait img {
@@ -3405,6 +3405,24 @@ html, body {
   .deep-dive-media {
     grid-template-columns: 1fr;
     gap: 1.5rem;
+    width: 100%;
+  }
+
+  .deep-img-large, 
+  .deep-img-portrait {
+    width: 100%;
+    min-height: auto;
+    aspect-ratio: 16 / 10;
+    max-height: 260px;
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .deep-img-large img, 
+  .deep-img-portrait img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
   
   .expertise-grid {
@@ -3669,6 +3687,12 @@ html, body {
 
   .deep-dive-specs {
     grid-template-columns: 1fr;
+  }
+
+  .deep-img-large, 
+  .deep-img-portrait {
+    max-height: 210px;
+    aspect-ratio: 16 / 10;
   }
 
   .other-project-card {
