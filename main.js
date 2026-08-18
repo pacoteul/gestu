@@ -570,6 +570,14 @@ function initApp() {
                 
                 // When we click the thumbnail, swap the main image in the hero place
                 thumbWrapper.onclick = () => {
+                    if (window.innerWidth <= 768) {
+                        const lightbox = document.getElementById('lightbox');
+                        const lightboxImg = document.getElementById('lightbox-img');
+                        lightboxImg.src = src;
+                        lightbox.classList.add('active');
+                        return;
+                    }
+                    
                     const visualContainer = document.querySelector('.project-visual');
                     if (isTimeLapse && project.timeLapseImages) {
                         renderInteractiveHero(visualContainer, project);
