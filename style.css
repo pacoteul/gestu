@@ -1953,7 +1953,7 @@ html, body {
 #view-projets-grid {
   background: var(--bg-color);
   color: var(--text-color);
-  padding: 12rem 3rem 4rem 3rem;
+  padding: 12rem 0 0 0;
   overflow-y: auto;
 }
 
